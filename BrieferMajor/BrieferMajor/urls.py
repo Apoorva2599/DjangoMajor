@@ -16,6 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.urls import include, path
+from BrieferApp import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
+    path('Sentiment',views.Sentiment,name='Sentiment'),
+    path('LangTranslate',views.LangTranslate,name='LangTranslate'),
+    path('Optimize',views.Optimize,name='Optimize'),
+    path('About',views.About,name='About'),
+    path('Summary',views.Summary,name='Summary'),
+    
 ]

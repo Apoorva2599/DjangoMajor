@@ -1,0 +1,81 @@
+*{
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+/*NAV ITEMS*/
+.navbar-brand{
+  font-family: 'Cabin Sketch';
+}
+li{
+    text-align: center;
+    padding: .3rem 1.5rem;
+    font-size: 17px;
+}
+.nav-link{
+  color: white !important;
+  font-family: 'Bad Script';
+  font-weight: bold;
+}
+li:hover{
+    background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+    background-size: 100% 100%;
+    color: #27262c;
+    animation: spring 300ms ease-out;
+    text-shadow: 0 -1px 0 #ef816c;
+    font-weight: bold;
+}
+li.active {
+    background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+    background-size: 100% 100%;
+    color: #27262c;
+    animation: spring 300ms ease-out;
+    text-shadow: 0 -1px 0 #ef816c;
+    font-weight: bold;
+}
+
+@keyframes spring {
+  15% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.2, 1.1);
+  }
+  40% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(0.95, 0.95);
+  }
+  75% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.05, 1);
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1, 1);
+  }
+}
+/*END NAV*/
+
+/*SECTIONS*/
+.container-fluid{
+  padding: 0px;
+}
+section{
+  width: 100%;
+  padding: 0 7%;
+  display: table;
+  margin: auto;
+  max-width: none;
+  height: 100vh;
+}
+section:nth-child(odd){
+  background-color: #ef816c;
+}
+
+/*END SECTIONS*/
+
+#home h1{
+  margin-top: 100px;
+  text-align: center;
+  color: #27262c;
+  font-family: 'Cabin Sketch';
+}
