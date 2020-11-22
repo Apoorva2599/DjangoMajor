@@ -1,0 +1,71 @@
+#Setextareas > form{
+    background-color:rgba(21, 21, 27, 0.158);
+    height: 400px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+}
+textarea{
+    resize:none;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#sentiinputs button{
+    width: 50%;
+    margin: auto;
+    position: relative;
+    background-color:rgba(245, 108, 92, 0.993);
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: medium;
+    color: white;
+    font-weight: bold;
+}
+
+.progress{
+    margin: 20px;
+    font-size: .8rem;
+    height: 5em;
+    border-radius: 1em;
+    background-color:lightgray;
+}
+
+.progress-bar{
+    padding: 0 20px;
+    font-size: 1.2em;
+    overflow: visible;
+    font-weight: bold;
+}
+@media only screen and  (min-width: 500px) {
+    h1 {
+        font-size: 3.5rem;  
+    }
+}
+@media only screen and  (min-width: 625px) {
+    h1 {
+        font-size: 4.5rem;  
+    }
+}
+
+ /* Small devices (tablets, 768px and up) */
+@media only screen and  (min-width: 768px) {
+    h1 {
+        font-size: 5.5rem;  
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    h1 {
+        font-size: 5.7rem;  
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    h1 {
+        font-size: 5.8rem;  
+    }
+}

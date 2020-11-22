@@ -11,12 +11,7 @@ nltk.download('punkt')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import language_tool_python
 import pandas as pd
-from bokeh.io import output_file, show
-from bokeh.palettes import Category20c
-from bokeh.plotting import figure
-from bokeh.transform import cumsum
 from numpy import pi
-from bokeh.embed import components
 from googletrans import Translator, LANGUAGES
 
 # Create your views here.
@@ -35,7 +30,7 @@ def Sentiment(request):
         print(text) 
         sid = SentimentIntensityAnalyzer()
 
-        message_text = '''It seems to me we are in the middle of no man's land with respect to the  following:  Opec production speculation, Mid east crisis and renewed  tensions, US elections and what looks like a slowing economy (?), and no real weather anywhere in the world. I think it would be most prudent to play  the markets from a very flat price position and try to day trade more aggressively. I have no intentions of outguessing Mr. Greenspan, the US. electorate, the Opec ministers and their new important roles, The Israeli and Palestinian leaders, and somewhat importantly, Mother Nature.  Given that, and that we cannot afford to lose any more money, and that Var seems to be a problem, let's be as flat as possible. I'm ok with spread risk  (not front to backs, but commodity spreads). The morning meetings are not inspiring, and I don't have a real feel for  everyone's passion with respect to the markets.  As such, I'd like to ask  John N. to run the morning meetings on Mon. and Wed.  Thanks. Jeff'''
+        #message_text = '''It seems to me we are in the middle of no man's land with respect to the  following:  Opec production speculation, Mid east crisis and renewed  tensions, US elections and what looks like a slowing economy (?), and no real weather anywhere in the world. I think it would be most prudent to play  the markets from a very flat price position and try to day trade more aggressively. I have no intentions of outguessing Mr. Greenspan, the US. electorate, the Opec ministers and their new important roles, The Israeli and Palestinian leaders, and somewhat importantly, Mother Nature.  Given that, and that we cannot afford to lose any more money, and that Var seems to be a problem, let's be as flat as possible. I'm ok with spread risk  (not front to backs, but commodity spreads). The morning meetings are not inspiring, and I don't have a real feel for  everyone's passion with respect to the markets.  As such, I'd like to ask  John N. to run the morning meetings on Mon. and Wed.  Thanks. Jeff'''
 
         message = text
         
@@ -47,8 +42,9 @@ def Sentiment(request):
         d={}
         for key in sorted(scores):
             print('{0}: {1}, '.format(key, scores[key]), end='')
-            d.update({key:scores[key]})
-        print(d.keys())
+            val = round(scores[key]*100,2)
+            d.update({key:val})
+        print(d)
         
         d.update({"flag":1,"text":text})
         

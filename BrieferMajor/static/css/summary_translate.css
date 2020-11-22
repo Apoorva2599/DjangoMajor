@@ -1,0 +1,81 @@
+#Stextareas > form{
+    background-color:rgba(21, 21, 27, 0.158);
+    height: 400px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+}
+
+#Ltextareas > form{
+    background-color:rgba(21, 21, 27, 0.158);
+    height: 400px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+}
+
+textarea{
+    resize:none;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#langinputs,#summaryinputs{
+    margin: 0;
+}
+#langinputs  input,#langinputs button{
+    width: 100%;
+    position: relative;
+    background-color:rgba(245, 108, 92, 0.993);
+    border: 2px solid white;
+    font-size: small;
+    color: white;
+    font-weight: bold;
+}
+::placeholder{
+    color: white;
+}
+#summaryinputs button{
+    width: 50%;
+    margin: auto;
+    position: relative;
+    background-color:rgba(245, 108, 92, 0.993);
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: medium;
+    color: white;
+    font-weight: bold;
+}
+@media only screen and  (min-width: 500px) {
+    h1 {
+        font-size: 3.5rem;  
+    }
+}
+@media only screen and  (min-width: 625px) {
+    h1 {
+        font-size: 4.5rem;  
+    }
+}
+
+ /* Small devices (tablets, 768px and up) */
+@media only screen and  (min-width: 768px) {
+    h1 {
+        font-size: 5.5rem;  
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    h1 {
+        font-size: 5.7rem;  
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    h1 {
+        font-size: 5.8rem;  
+    }
+}

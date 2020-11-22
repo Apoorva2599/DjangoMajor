@@ -12,24 +12,11 @@
         <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/home.css' %}">
+        <link rel="stylesheet" href="{% static 'css/sentiment.css' %}">
         <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
 
-
-        
-        <style>
-          textarea{
-            resize:none;
-            margin: 50px 50px 50px 60px;
-          }
-          .col-sm-6{
-            margin-top:50px;
-            border-radius: 15px;
-            
-          }
-        </style>
-        
     </head>
     <body>
         <header>
@@ -50,7 +37,7 @@
                       <li class="nav-item">
                         <a class="nav-link" href="{% url 'LangTranslate' %}">Translate</a>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item active">
                           <a class="nav-link" href="{% url 'Sentiment' %}">Sentiment</a>
                         </li>
                       <li class="nav-item">
@@ -64,44 +51,49 @@
       
         <!--SECTIONS-->
         <div class="container-fluid">
-            <section id="sentiment">
-                <h1 class="display-1" style="text-align: center;">Sentiment Analyzer</h1>
-                <div class="container-fluid">
+            <div id="sentiment">
+              <h1 class="dispay-4">Sentiment Analyzer</h1>
+              <div class="container">
     
-                  <div class="row">
-                    <div class="col-sm-6" style="background-color:rgba(21, 21, 27, 0.158);height:400px;width:100px;">
-                      <form  id="senti" method="POST" action="{% url 'Sentiment' %}">
+                  <div class="row" id="Setextareas">
+                      <form  id="senti" method="POST" action="{% url 'Sentiment' %}" class="col-md-6 col-12">
                         {% csrf_token %}
-                        <textarea name="text" id="text" placeholder="Input your text" cols="60" rows="10">
-                        {% if text %}
-                          {{ text }}
-                        {% endif %}  
-                        </textarea>
-                        
-                        <button type="submit">Submit</button>
+                        <textarea name="text" id="text" placeholder="Input your text">{% if text %}{{ text }}{% endif %}</textarea>
+                        <div class="row" id="sentiinputs">
+                          <button type="submit">Analyze</button>
+                        </div>
                       </form>
-                    </div>
-  
-                    <div class="col-sm-6" style="background-color:rgba(21, 21, 27, 0.158);height:400px;width:100px;">
                       
-                      <form >
+                      <form class="col-md-6 col-12">
                         {% csrf_token %}
-                        <textarea name="" id="" cols="60" rows="10">
-                          {% if flag %}
-                        {{flag}}
-                      {% endif %}
-                    
-                          {{message}}
-                      
-                      </textarea>
-                  
+                        <!-- <textarea name="" id="">{% if flag %}{{flag}}{% endif %}</textarea> -->
+                        <div class="progress">
+                        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow={{pos}} aria-valuemin="0" aria-valuemax="100" style="width:{{pos}}%">
+                            Positive : {{pos}}%
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow={{neg}} aria-valuemin="0" aria-valuemax="100" style="width:{{neg}}%">
+                            Negative : {{neg}}%
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow={{neu}} aria-valuemin="0" aria-valuemax="100" style="width:{{neu}}%">
+                            Neutral : {{neu}}%
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow={{compound}} aria-valuemin="0" aria-valuemax="100" style="width:{{compound}}%">
+                            Compound : {{compound}}%
+                          </div>
+                        </div>
                       </form>
                       
                     </div>
                     
                   </div>
                 </div>
-              </section>
+              </div>
             
         </div>
         <!--END SECTIONS-->
