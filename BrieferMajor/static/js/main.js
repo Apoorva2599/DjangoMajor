@@ -4,6 +4,7 @@ $(document).ready(function(){
 	
 });
 //const modalbody = document.getElementById("modalbody");
+var flag;
 const result = document.getElementById("result");
 const closebtn = document.getElementById("closebtn");
 //const testbtn = document.getElementById("test");
@@ -29,7 +30,7 @@ if (typeof SpeechRecognition === "undefined") {
 		if (res.isFinal) {
 			const response = process(text);
 			const p = document.createElement("p");
-			p.innerHTML = `You said: ${text} </br>Siri said: ${response}`;
+			p.innerHTML = `You : ${text} </br>Briefy : ${response}`;
 			result.appendChild(p);
 
 			// text to speech
@@ -48,19 +49,53 @@ if (typeof SpeechRecognition === "undefined") {
 
 // processor
 function process(rawText) {
+	if(flag==='s'){
+		$.ajax({
+			type:'POST',
+			url:'Summary',
+			data:{
+			  text:rawText,
+			  csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+			},
+			headers: {
+			   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			 },
+			success:function(response){
+				console.log(response);
+			},
+			error: function(data){}
+		});
+	}
+	if(flag==='done'){
+		text="done";
+	}
 	let text = rawText.replace(/\s/g, "");
 	text = text.toLowerCase();
+	var summary = text.match(/summar/i)
+	if(summary != undefined){
+		text="summary";
+	}
 	let response = null;
 	switch(text) {
 		case "hello":
-			response = "hi, welcome to Briefer. How may I help you"; break;
+			response = "hi, welcome to Briefer. We summarize,analyze or translate your text. How should I help you"; break;
 		case "whatoptionsdoyouhave":
 			response = "Do you want to summarize,analyze or translate your text?";  break;
 		case "howareyou":
 			response = "I'm good."; break;
+		case "summary":
+			response = "Ok. You can input your text through speech now.";
+			flag = 's';
+			break;
+		case 'done':
+			response = 'done';
+			break;
 		case "whattimeisit":
 			response = new Date().toLocaleTimeString(); break;
 		case "stop":
+			response = "Bye!!";
+			toggleBtn();
+		case "bye":
 			response = "Bye!!";
 			toggleBtn();
 	}

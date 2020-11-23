@@ -60,18 +60,25 @@
     
                   <div class="row" id="Stextareas">
                     
-                      <form class="col-md-6 col-12">
+                      <form action="{% url 'Summary' %}" method="POST" class="col-md-6 col-12">
                         {% csrf_token %}
-                        <textarea name="text" id="text" placeholder="Input your text" ></textarea>
+                        <textarea name="text" id="text" placeholder="Input your text" >{% if text %}{{text}}{% endif %}</textarea>
                         <div class="row" id="summaryinputs">
-                          <button type="submit">Brief It</button>
+                          <div class="col-6">
+                          <input type="number" placeholder="Enter frequency count" name="n">
+                          </div>
+                          <div class="col-6">
+                            <button type="submit">Brief It</button>
+                          </div>
+                          
                         </div>
                       </form>
                               
                       <form class="col-md-6 col-12">
                         {% csrf_token %}
-                        <textarea name="" id="" readonly="True"></textarea>               
-                      </form>                   
+                        <textarea name="" id="" readonly="True">{{output}}</textarea>               
+                      </form>    
+
                                      
                   </div>
                 </div>
