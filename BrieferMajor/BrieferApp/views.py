@@ -47,6 +47,7 @@ def Sentiment(request):
         print(d)
         
         d.update({"flag":1,"text":text})
+        print(d)
         
         return render(request,'Sentiment.html',context=d)  
     else:
@@ -56,7 +57,6 @@ def Sentiment(request):
 def LangTranslate(request):
     language = list(LANGUAGES.values())
     if request.method == 'POST' and request.POST.get('text'):
-        
         t1=request.POST.get('text')
         try:
             inputLanguage = request.POST.get('in_lang')
@@ -66,11 +66,12 @@ def LangTranslate(request):
             translated = translator.translate(text=dataToTranslate, src=inputLanguage, dest=outputLanguage)
             is_Available = 'Yes'
         except Exception:
-            translated = "Sorry Please Enter Valid Text"
+            translated = "Please re enter"
             is_Available = 'No'
             
-        return render(request, 'LangTranslate.html', {'translated': translated, 'is_Available': is_Available, 'language': language, 'text':t1,"fl":1})
+        return render(request, 'LangTranslate.html', {'translated': translated, 'is_Available': is_Available, 'language': language, 'text':t1})
     else:
+        print(request.method)
         return render(request, 'LangTranslate.html', {'language': language})
     
 def Optimize(request):

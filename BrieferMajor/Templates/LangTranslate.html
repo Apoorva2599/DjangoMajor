@@ -61,13 +61,21 @@
                 <div class="row" id="Ltextareas">
                     <form   action="{% url 'LangTranslate' %}" method="post" class="col-md-6 col-12">
                       {% csrf_token %}
-                      <textarea name="text" id="text" placeholder="Input your text">{% if fl %}{{text}}{% endif %}</textarea>
+                      <textarea name="text" id="text" placeholder="Input your text">{% if text %}{{text}}{% endif %}</textarea>
                       <div class="row" id="langinputs">  
                         <div class="col-4">
-                          <input type="text" placeholder="Input Language" id="in_lang" name="in_lang"> 
+                          <select name="in_lang">
+                            {% for l in language %}
+                                <option value="{{ l }}">{{ l }}</option>
+                            {% endfor %}
+                          </select>
                         </div>
                         <div class="col-4">
-                          <input type="text" placeholder="Output Language" id="out_lang" name="out_lang">
+                          <select name="out_lang">
+                            {% for l in language %}
+                                <option value="{{ l }}">{{ l }}</option>
+                            {% endfor %}
+                          </select>
                         </div>
                         <div class="col-4">
                           <button type="submit">Submit</button>
@@ -77,7 +85,13 @@
                   
                     <form class="col-md-6 col-12">
                       {% csrf_token %}
-                      <textarea name="" id="" readonly="True">{% if fl %}{{translated}}{% endif %}</textarea>
+                      <textarea name="" id="" readonly="True">
+                        {% if is_Available == "Yes" %}
+                          {{ translated.text }}
+                        {% elif is_Available == "No" %}
+                             {{ translated }}                            
+                        {% endif %}
+                      </textarea>
                 
                     </form>
                     
