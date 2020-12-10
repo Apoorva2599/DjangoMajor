@@ -22,19 +22,26 @@ import networkx as nx
 import operator
 from django.views import View
 # Create your views here.
-def uploadOpti(request):
-    # file = open(file_name, "r")
-    # filedata = file.readlines()
-    
-    # return filedata
-    if request.method == 'POST':
-        upload_f = request.FILES['file']
-        # data_file = open(upload_f,"r")
-        # data = data_file.read()
-        data = upload_f.read()
-        return redirect('Optimize', output=data)
-    else:
-        return redirect('Optimize', output=None)
+
+#url extraction
+import re
+import trafilatura
+regex = r"(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'\".,<>?«»“”‘’]))"
+# file upload
+from .forms import UploadFileForm
+from django.core.files.storage import FileSystemStorage
+import pandas as pd
+import os
+from django.conf import settings
+def upload(upload_f):       
+        fs = FileSystemStorage()
+        fs.save(upload_f.name,upload_f)
+        with open(settings.MEDIA_ROOT +'/' + upload_f.name, 'r') as f:  
+            data = f.read()
+        return data   
+
+
+
 
 def split_sentence(data):
     article = data.split(". ")
@@ -88,19 +95,30 @@ def build_similarity_matrix(sentences, stop_words):
 
 def Summary(request):
     ajx = False
-    if request.method == "POST":
-        text = request.POST.get('text')
-        #flag = request.POST.get('flag')
-        count = len(nltk.tokenize.sent_tokenize(text))
-        print(count)
+    if request.method=='POST':            
+        if request.POST.get('text_up'):
+            text = request.POST.get('text')
+        elif request.POST.get('url_up'):
+            url_up = request.POST.get('text')
+            url = re.search("(?P<url>https?://[^\s]+)", url_up).group("url")
+            downloaded = trafilatura.fetch_url(url)
+            text = trafilatura.extract(downloaded)
+                       
+        elif request.POST.get('upld'):
+            text = upload(request.FILES['file'])
+
+       
         top_n = 0
        
         if request.is_ajax():
+            text = request.POST.get('text')
+            count = len(nltk.tokenize.sent_tokenize(text))
             if count == 1:
                 return JsonResponse({'output':'Text is already summarized.'},status=200)
             top_n = int(count*0.6)    
             ajx = True
         else:
+            count = len(nltk.tokenize.sent_tokenize(text))
             top_n = int(request.POST.get('n'))
             if top_n == count:
                 return render(request,'Summary.html',{'output':text,'text':text})
@@ -151,11 +169,22 @@ def About(request):
 
 def Sentiment(request):
     ajx = False
-    if request.method=="POST" and request.POST.get('text'):
+    if request.method=='POST':            
+        if request.POST.get('text_up'):
+            text = request.POST.get('text')
+        elif request.POST.get('url_up'):
+            url_up = request.POST.get('text')
+            url = re.search("(?P<url>https?://[^\s]+)", url_up).group("url")
+            downloaded = trafilatura.fetch_url(url)
+            text = trafilatura.extract(downloaded)
+                       
+        elif request.POST.get('upld'):
+            text = upload(request.FILES['file'])
         
         if request.is_ajax():
+            text = request.POST.get('text')
             ajx = True
-        text = request.POST.get('text')   
+        # text = request.POST.get('text')   
         print(text) 
         sid = SentimentIntensityAnalyzer()
 
@@ -191,14 +220,24 @@ def Sentiment(request):
 def LangTranslate(request):
     language = list(LANGUAGES.values())
     ajx = False
-    if request.method == 'POST' and request.POST.get('text'):
-        text=request.POST.get('text')
+    if request.method=='POST':            
+        if request.POST.get('text_up'):
+            text = request.POST.get('text')
+        elif request.POST.get('url_up'):
+            url_up = request.POST.get('text')
+            url = re.search("(?P<url>https?://[^\s]+)", url_up).group("url")
+            downloaded = trafilatura.fetch_url(url)
+            text = trafilatura.extract(downloaded)
+                       
+        elif request.POST.get('upld'):
+            text = upload(request.FILES['file'])    
         if request.is_ajax():
+            text = request.POST.get('text')
             ajx = True
         
         inputLanguage = str(request.POST.get('in_lang')).lower()
         outputLanguage = str(request.POST.get('out_lang')).lower()
-        dataToTranslate = request.POST.get('text')
+        dataToTranslate = text
         print(inputLanguage,outputLanguage)
         translator= Translator(from_lang= inputLanguage,to_lang=outputLanguage)
         translation = translator.translate(dataToTranslate )
@@ -213,11 +252,22 @@ def LangTranslate(request):
             return render(request, 'LangTranslate.html', {'language': language})
     
 def Optimize(request):
-    if request.method=='POST' and request.POST.get("text"):
+    if request.method=='POST':            
+        if request.POST.get('text_up'):
+            text = request.POST.get('text')
+        elif request.POST.get('url_up'):
+            url_up = request.POST.get('text')
+            url = re.search("(?P<url>https?://[^\s]+)", url_up).group("url")
+            downloaded = trafilatura.fetch_url(url)
+            text = trafilatura.extract(downloaded)               
+        elif request.POST.get('upld'):
+            text = upload(request.FILES['file']) 
+
+
         #FREQUENT WORDS
         # text = "Hello my name is Apoorva. My name is also popo. My home is in Indore/Sagar."
         tool = language_tool_python.LanguageTool('en-US')
-        text=request.POST.get('text')
+        # text=request.POST.get('text')
         t1=text
         matches = tool.check(t1)
         #print(matches)

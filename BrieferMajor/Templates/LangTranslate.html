@@ -59,11 +59,23 @@
               <div class="container">
   
                 <div class="row" id="Ltextareas">
-                    <form   action="{% url 'LangTranslate' %}" method="post" class="col-md-6 col-12">
+                    <form   action="{% url 'LangTranslate' %}" method="post" class="col-md-6 col-12"  enctype="multipart/form-data">
                       {% csrf_token %}
-                      <textarea name="text" id="text" placeholder="Input your text" required>{% if text %}{{text}}{% endif %}</textarea>
-                      <div class="row" id="langinputs">  
+                      <textarea name="text" id="text" placeholder="Input your text" >{% if text %}{{text}}{% endif %}</textarea>
+                      <div class="row" id="langinputs"> 
+                        
+                          <!-- User input options -->
+
+ 
+                        <input type="radio" id="text_up" name="text_up" value="text_up">
+                          <label for="text_up">Paste Your Text</label>
+                          <input type="radio" id="upld" name="upld" value="upld">
+                          <label for="upld">UPLOAD</label>
+                          <input type="radio" id="url_up" name="url_up" value="url_up">
+                          <label for="url_up">URL</label>
+                          <input type="file" id="file" name="file">
                         <div class="col-4">
+                          
                           <select name="in_lang">
                             {% for l in language %}
                                 <option value="{{ l }}">{{ l }}</option>
