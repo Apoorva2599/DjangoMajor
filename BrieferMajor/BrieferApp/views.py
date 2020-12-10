@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.http import HttpResponseRedirect
 import nltk
+from nltk.stem import WordNetLemmatizer
 import language_check #grammar check
 from textblob import TextBlob
 from collections import Counter
@@ -14,23 +15,26 @@ import language_tool_python
 import pandas as pd
 from numpy import pi
 from googletrans import Translator, LANGUAGES
+from translate import Translator
 from nltk.cluster.util import cosine_distance
 import numpy as np
 import networkx as nx
 import operator
+from django.views import View
 # Create your views here.
-def upload(file_name):
+def uploadOpti(request):
     # file = open(file_name, "r")
     # filedata = file.readlines()
     
     # return filedata
     if request.method == 'POST':
         upload_f = request.FILES['file']
-        data_file = open(upload_f,"r")
-        data = data_file.read()
-        return HttpResponseRedirect(request.path_info)
+        # data_file = open(upload_f,"r")
+        # data = data_file.read()
+        data = upload_f.read()
+        return redirect('Optimize', output=data)
     else:
-        return render(request, 'upload.html', {"flag":0})
+        return redirect('Optimize', output=None)
 
 def split_sentence(data):
     article = data.split(". ")
@@ -83,9 +87,27 @@ def build_similarity_matrix(sentences, stop_words):
 
 
 def Summary(request):
+    ajx = False
     if request.method == "POST":
         text = request.POST.get('text')
-        top_n = int(request.POST.get('n'))
+        #flag = request.POST.get('flag')
+        count = len(nltk.tokenize.sent_tokenize(text))
+        print(count)
+        top_n = 0
+       
+        if request.is_ajax():
+            if count == 1:
+                return JsonResponse({'output':'Text is already summarized.'},status=200)
+            top_n = int(count*0.6)    
+            ajx = True
+        else:
+            top_n = int(request.POST.get('n'))
+            if top_n == count:
+                return render(request,'Summary.html',{'output':text,'text':text})
+            elif top_n > count:
+                return render(request,'Summary.html',{'output':'Please enter appropriate value for frequency count!!','text':text})
+            elif count == 1:
+                return render(request,'Summary.html',{'output':'Text is already summarized.','text':text})
         nltk.download("stopwords")
         stop_words = stopwords.words('english')
         summarize_text = []
@@ -110,9 +132,15 @@ def Summary(request):
         # Step 5 - Offcourse, output the summarize texr
         print("Summarize Text: \n", ". ".join(summarize_text))
         summary = ". ".join(summarize_text)
-        return render(request,'Summary.html',{'output':summary,'text':text})
+        if ajx:
+            return JsonResponse({'output':summary},status=200)
+        else:
+            return render(request,'Summary.html',{'output':summary,'text':text})
     else:
-        return render(request,'Summary.html',context=None)
+        if ajx:
+            return JsonResponse({'output':None},status=200)
+        else:
+            return render(request,'Summary.html',context=None)
 
 def home(request):
     return render(request,'home.html',context=None)
@@ -122,9 +150,11 @@ def About(request):
     return render(request,'About.html',context=None)        
 
 def Sentiment(request):
-    
+    ajx = False
     if request.method=="POST" and request.POST.get('text'):
         
+        if request.is_ajax():
+            ajx = True
         text = request.POST.get('text')   
         print(text) 
         sid = SentimentIntensityAnalyzer()
@@ -148,30 +178,39 @@ def Sentiment(request):
         d.update({"flag":1,"text":text})
         print(d)
         
-        return render(request,'Sentiment.html',context=d)  
+        if ajx:
+            return JsonResponse(d,status=200)
+        else:
+            return render(request,'Sentiment.html',context=d)  
     else:
-        print("hii")
-        return render(request,'Sentiment.html',{"message":"hello"})  
+        if ajx:
+            return JsonResponse(None,status=200)
+        else:
+            return render(request,'Sentiment.html',{"message":None})  
 
 def LangTranslate(request):
     language = list(LANGUAGES.values())
+    ajx = False
     if request.method == 'POST' and request.POST.get('text'):
-        t1=request.POST.get('text')
-        try:
-            inputLanguage = request.POST.get('in_lang')
-            outputLanguage = request.POST.get('out_lang')
-            dataToTranslate = request.POST.get('text')
-            translator = Translator()
-            translated = translator.translate(text=dataToTranslate, src=inputLanguage, dest=outputLanguage)
-            is_Available = 'Yes'
-        except Exception:
-            translated = "Please re enter"
-            is_Available = 'No'
-            
-        return render(request, 'LangTranslate.html', {'translated': translated, 'is_Available': is_Available, 'language': language, 'text':t1})
+        text=request.POST.get('text')
+        if request.is_ajax():
+            ajx = True
+        
+        inputLanguage = str(request.POST.get('in_lang')).lower()
+        outputLanguage = str(request.POST.get('out_lang')).lower()
+        dataToTranslate = request.POST.get('text')
+        print(inputLanguage,outputLanguage)
+        translator= Translator(from_lang= inputLanguage,to_lang=outputLanguage)
+        translation = translator.translate(dataToTranslate )
+        if ajx:
+            return JsonResponse({'translation': translation, 'language': language, 'text':text},status=200)
+        else:    
+            return render(request, 'LangTranslate.html', {'translation': translation, 'language': language, 'text':text})
     else:
-        print(request.method)
-        return render(request, 'LangTranslate.html', {'language': language})
+        if ajx:
+            return JsonResponse(None,status=200)
+        else:
+            return render(request, 'LangTranslate.html', {'language': language})
     
 def Optimize(request):
     if request.method=='POST' and request.POST.get("text"):
@@ -215,18 +254,22 @@ def Optimize(request):
         tokenizer = nltk.RegexpTokenizer(r"\w+") #removing punctuatuons.
         words = tokenizer.tokenize(t1)
 
+        st = WordNetLemmatizer()
         filtered_sentence = [w for w in words if not w in stop_words and len(w)!=1]
-
-        frequency = Counter(filtered_sentence)
+        lemmas = set(st.lemmatize(fs) for fs in filtered_sentence)
+        n = int(len(lemmas)*0.3)
+        frequency = Counter(lemmas)
         print(frequency)
 
-        n_items = dict( sorted(frequency.items(), key=operator.itemgetter(1),reverse=True)[:5])
+        n_items = dict( sorted(frequency.items(), key=operator.itemgetter(1),reverse=True)[:n])
         #SYNONYMS
         synonyms = {}
 
         for f in n_items:
             for syn in wordnet.synsets(f): 
                 s = set()
+                if len(syn.lemmas()) == 1:
+                    continue
                 for l in syn.lemmas(): 
                     s.add(l.name())
                 synonyms[f] = ','.join(list(s))

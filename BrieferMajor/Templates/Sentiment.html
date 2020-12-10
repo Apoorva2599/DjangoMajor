@@ -58,7 +58,7 @@
                   <div class="row" id="Setextareas">
                       <form  id="senti" method="POST" action="{% url 'Sentiment' %}" class="col-md-6 col-12">
                         {% csrf_token %}
-                        <textarea name="text" id="text" placeholder="Input your text">{% if text %}{{ text }}{% endif %}</textarea>
+                        <textarea name="text" id="text" placeholder="Input your text" required>{% if text %}{{ text }}{% endif %}</textarea>
                         <div class="row" id="sentiinputs">
                           <button type="submit">Analyze</button>
                         </div>

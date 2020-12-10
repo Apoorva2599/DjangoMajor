@@ -62,10 +62,10 @@
                     
                       <form action="{% url 'Summary' %}" method="POST" class="col-md-6 col-12">
                         {% csrf_token %}
-                        <textarea name="text" id="text" placeholder="Input your text" >{% if text %}{{text}}{% endif %}</textarea>
+                        <textarea name="text" id="text" placeholder="Input your text" required>{% if text %}{{text}}{% endif %}</textarea>
                         <div class="row" id="summaryinputs">
                           <div class="col-6">
-                          <input type="number" placeholder="Enter frequency count" name="n">
+                          <input type="number" placeholder="Enter frequency count" name="n" min="1" required>
                           </div>
                           <div class="col-6">
                             <button type="submit">Brief It</button>

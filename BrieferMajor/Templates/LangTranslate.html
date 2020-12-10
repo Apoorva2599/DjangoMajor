@@ -61,7 +61,7 @@
                 <div class="row" id="Ltextareas">
                     <form   action="{% url 'LangTranslate' %}" method="post" class="col-md-6 col-12">
                       {% csrf_token %}
-                      <textarea name="text" id="text" placeholder="Input your text">{% if text %}{{text}}{% endif %}</textarea>
+                      <textarea name="text" id="text" placeholder="Input your text" required>{% if text %}{{text}}{% endif %}</textarea>
                       <div class="row" id="langinputs">  
                         <div class="col-4">
                           <select name="in_lang">
@@ -85,13 +85,7 @@
                   
                     <form class="col-md-6 col-12">
                       {% csrf_token %}
-                      <textarea name="" id="" readonly="True">
-                        {% if is_Available == "Yes" %}
-                          {{ translated.text }}
-                        {% elif is_Available == "No" %}
-                             {{ translated }}                            
-                        {% endif %}
-                      </textarea>
+                      <textarea name="" id="" readonly="True">{{ translation }}</textarea>
                 
                     </form>
                     

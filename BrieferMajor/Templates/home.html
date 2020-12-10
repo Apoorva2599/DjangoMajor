@@ -56,7 +56,12 @@
                         <button type="button" class="close" data-dismiss="modal" id="closebtn">&times;</button>
                     </div>
                     <div class="modal-body" id="modalbody">
-                        <div id="result"></div>
+                        <div id="result">
+                          <form method="POST">{% csrf_token %}
+                            <p>{{output}}</p>
+                          </form>
+                          
+                        </div>
                     </div>
                 </div>
             </div>

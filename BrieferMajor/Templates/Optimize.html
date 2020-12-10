@@ -61,7 +61,7 @@
                   <div class="row" id="Otextareas">
                       <form  action="{% url 'Optimize' %}" method="post" class="col-md-6 col-12">
                         {% csrf_token %}
-                        <textarea name="text" id="text" placeholder="Input your text">{% if text %}{{ text }}{% endif %}</textarea>
+                        <textarea name="text" id="text" placeholder="Input your text" required>{% if text %}{{ text }}{% endif %}{% if output %}{{output}}{% endif %}</textarea>
                         <div class="row" id="optimizeinputs">
                         <button type="submit">Optimize</button>
                       </div>

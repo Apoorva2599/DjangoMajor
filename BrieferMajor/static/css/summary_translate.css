@@ -34,8 +34,11 @@ textarea{
     color: white;
     font-weight: bold;
 }
-::placeholder{
+input::placeholder{
     color: white;
+}
+textarea::placeholder{
+    color: gray;
 }
 #summaryinputs button,#summaryinputs input{
     width: 100%;

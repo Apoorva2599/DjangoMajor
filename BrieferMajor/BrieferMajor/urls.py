@@ -27,5 +27,5 @@ urlpatterns = [
     path('Optimize',views.Optimize,name='Optimize'),
     path('About',views.About,name='About'),
     path('Summary',views.Summary,name='Summary'),
-    path('upload',views.upload,name='upload'),
+    path('uploadOpti',views.uploadOpti,name='uploadOpti'),
 ]
