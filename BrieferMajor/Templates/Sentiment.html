@@ -59,19 +59,40 @@
                       <form  id="senti" method="POST" action="{% url 'Sentiment' %}"  enctype="multipart/form-data" class="col-md-6 col-12">
                         {% csrf_token %}
                         <textarea name="text" id="text" placeholder="Input your text" >{% if text %}{{ text }}{% endif %}</textarea>
-                        <div class="row" id="sentiinputs">
+                          <div class="row" id="sentiinputs">
                           
                           <!-- User input options -->
 
 
-                          <input type="radio" id="text_up" name="text_up" value="text_up">
-                          <label for="text_up">Paste Your Text</label>
-                          <input type="radio" id="upld" name="upld" value="upld">
-                          <label for="upld">UPLOAD</label>
-                          <input type="radio" id="url_up" name="url_up" value="url_up">
-                          <label for="url_up">URL</label>
-                          <input type="file" id="file" name="file">
-                          <button type="submit">Analyze</button>
+                         <div class="row" id="userop">
+                      <div class="col-2" >
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="text_up">
+                          <input type="checkbox" class="form-check-input" id="text_up" name="text_up" value="text_up" checked>Text
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-2" >
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="url_up">
+                          <input type="checkbox" class="form-check-input" id="url_up" name="url_up" value="url_up">URL
+                          </label>
+                        </div>
+                      </div>
+                     
+                      <div class="col-2" >
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="upld">
+                          <input type="checkbox" class="form-check-input" id="upld" name="upld" value="upld">Upload
+                          </label>
+                        </div>
+                      </div>
+                    <div class="col-6" >
+                        <input type="file" id="file" name="file">
+                      </div>
+                  </div>
+                   
+                          <button type="submit" id="bi">Analyze</button>
                         </div>
                       </form>
                       

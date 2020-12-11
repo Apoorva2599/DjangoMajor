@@ -6,6 +6,12 @@
     text-align: center;
 }
 
+
+#text{
+    height:68%;
+}
+
+
 #Ltextareas > form{
     background-color:rgba(21, 21, 27, 0.158);
     height: 400px;
@@ -40,7 +46,18 @@ input::placeholder{
 textarea::placeholder{
     color: gray;
 }
-#summaryinputs button,#summaryinputs input{
+#langinputs #file{
+    width: 100%;
+    margin: auto;
+    position: relative;
+    background-color:rgba(245, 108, 92, 0.993);
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: medium;
+    color: white;
+    font-weight: bold;
+}
+#summaryinputs input{
     width: 100%;
     margin: auto;
     position: relative;
@@ -81,4 +98,54 @@ textarea::placeholder{
     h1 {
         font-size: 5.8rem;  
     }
+}
+
+#userop{
+    padding:3%;
+    
+    color:white;
+    font-family: cursive;
+    font-size: small;
+    margin-bottom: 2%;
+    
+}
+#bi{
+    background-color:#90EE90;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    color: black;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: medium;
+    
+    font-weight: bold;
+
+}
+#bi:hover{
+    background-color: green;
+}
+
+
+#userop:hover{
+    background-color: wheat;
+    color:black;
+    border-radius: 1em;
+    font-weight: 800;
+}
+
+#Ltextareas #userop{
+    padding:3%;
+    
+    color:white;
+    font-family: cursive;
+    font-size: small;
+    margin-bottom: 2%;
+}
+
+#Ltextareas #userop:hover{
+    background-color: wheat;
+    color:black;
+    border-radius: 1em;
+    font-weight: 800;
 }

@@ -12,6 +12,27 @@ textarea{
     height: 100%;
     position: relative;
 }
+#Otextareas #text{
+    height:68%;
+}
+
+#userop{
+    padding:3%;
+    
+    color:white;
+    font-family: cursive;
+    font-size: small;
+    margin-bottom: 2%;
+    
+}
+
+#userop:hover{
+    background-color: wheat;
+    color:black;
+    border-radius: 1em;
+    font-weight: 800;
+}
+
 #opti{
     resize:none;
     overflow: auto;
