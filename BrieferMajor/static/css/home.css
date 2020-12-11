@@ -107,3 +107,32 @@ h3{
   text-align: center;
   padding: 5px;
 }
+
+/*Voice Assistant*/
+.modal-content{
+  background-color: rgba(243, 136, 136, 0.849);
+  color: white;
+}
+h5.modal-title{
+  text-align: center;
+}
+#result{
+  position: relative;
+}
+#userchat{
+  background-color:  rgb(204, 82, 82);
+  border-radius: 8px;
+  padding: 5px;
+  color: white;
+  width: fit-content;
+  font-weight: bold;
+}
+
+#asstchat{
+  background-color: rgb(53, 52, 52);
+  color: white;
+  border-radius: 8px;
+  padding: 5px;
+  width: fit-content;
+  font-weight: bold;
+}

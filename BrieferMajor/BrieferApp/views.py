@@ -252,7 +252,8 @@ def LangTranslate(request):
             return render(request, 'LangTranslate.html', {'language': language})
     
 def Optimize(request):
-    if request.method=='POST':            
+    if request.method=='POST':       
+        text = ''     
         if request.POST.get('text_up'):
             text = request.POST.get('text')
         elif request.POST.get('url_up'):
