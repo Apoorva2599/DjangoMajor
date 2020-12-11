@@ -59,7 +59,7 @@
                       <form  id="senti" method="POST" action="{% url 'Sentiment' %}"  enctype="multipart/form-data" class="col-md-6 col-12">
                         {% csrf_token %}
                         <textarea name="text" id="text" placeholder="Input your text" >{% if text %}{{ text }}{% endif %}</textarea>
-                          <div class="row" id="sentiinputs">
+                          
                           
                           <!-- User input options -->
 
@@ -91,7 +91,7 @@
                         <input type="file" id="file" name="file">
                       </div>
                   </div>
-                   
+                  <div class="row" id="sentiinputs">
                           <button type="submit" id="bi">Analyze</button>
                         </div>
                       </form>
