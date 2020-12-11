@@ -1,0 +1,157 @@
+*{
+    box-sizing: border-box;
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+  /*NAV ITEMS*/
+  .navbar-brand{
+    font-family: 'Cabin Sketch';
+  }
+  li{
+      text-align: center;
+      padding: .3rem 1.5rem;
+      font-size: 17px;
+  }
+  .nav-link{
+    color: white !important;
+    font-family: 'Bad Script';
+    font-weight: bold;
+  }
+  li:hover{
+      background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+      background-size: 100% 100%;
+      color: #27262c;
+      animation: spring 300ms ease-out;
+      text-shadow: 0 -1px 0 #ef816c;
+      font-weight: bold;
+  }
+  li.active {
+      background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+      background-size: 100% 100%;
+      color: #27262c;
+      animation: spring 300ms ease-out;
+      text-shadow: 0 -1px 0 #ef816c;
+      font-weight: bold;
+  }
+  
+  @keyframes spring {
+    15% {
+      -webkit-transform-origin: center center;
+      -webkit-transform: scale(1.2, 1.1);
+    }
+    40% {
+      -webkit-transform-origin: center center;
+      -webkit-transform: scale(0.95, 0.95);
+    }
+    75% {
+      -webkit-transform-origin: center center;
+      -webkit-transform: scale(1.05, 1);
+    }
+    100% {
+      -webkit-transform-origin: center center;
+      -webkit-transform: scale(1, 1);
+    }
+  }
+  /*END NAV*/
+  
+  /*MAIN AREA*/
+  .container-fluid{
+    padding: 0px;
+  }
+  #home, #summary, #languageTrans, #optimize, #sentiment, #about{
+    width: 100%;
+    padding: 0 7%;
+    display: table;
+    margin: auto;
+    max-width: none;
+    height: 100vh;
+    background-color: #ef816c;
+  }
+  
+  /*END MAIN AREA*/
+  
+  h1{
+    margin-top: 80px;
+    text-align: center;
+    color: #27262c;
+    font-family: 'Cabin Sketch';
+  }
+  
+  #mainarea{
+    background-color:rgba(21, 21, 27, 0.158);
+    height:100%;
+    width:100%;
+    margin:auto;
+    padding: 20px;
+  }
+  
+  span{
+    color: white !important;
+    font-family: 'Cabin Sketch';
+    text-align: center;
+    font-weight: bold;
+    margin: auto;
+    display: block;
+    padding: 5%;
+    font-size:0.9em;
+  }
+  
+  h3{
+    width: 50%;
+    margin: 20px auto 20px auto;
+    background-color:rgba(245, 108, 92, 0.993);
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: medium;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+  }
+
+.flip-card {
+    background-color: transparent;
+    width: 280px;
+    height: 280px;
+    perspective: 1000px;
+    border-radius: 20px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 20px;
+  }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+    border-radius: 20px;
+  }
+  
+  .flip-card-back {
+    background-color:rgba(241, 136, 124, 0.993);
+    color: white;
+    transform: rotateY(180deg);
+    font-size: x-large;
+    border-radius: 20px;
+  }
+
+ 
