@@ -5,6 +5,10 @@
     position: relative;
     text-align: center;
 }
+
+#Setextareas #text{
+    height:68%;
+}
 textarea{
     resize:none;
     overflow: auto;
@@ -68,4 +72,50 @@ textarea{
     h1 {
         font-size: 5.8rem;  
     }
+}
+
+#userop{
+    padding:3%;
+    
+    color:white;
+    font-family: cursive;
+    font-size: small;
+    margin-bottom: 2%;
+    
+}
+#bi{
+    background-color:#90EE90;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    color: black;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size:medium;
+    
+    font-weight: bold;
+
+}
+#bi:hover{
+    background-color: green;
+}
+
+
+#userop:hover{
+    background-color: wheat;
+    color:black;
+    border-radius: 1em;
+    font-weight: 800;
+}
+
+#sentiinputs #file{
+    width: 100%;
+    margin: auto;
+    position: relative;
+    background-color:rgba(245, 108, 92, 0.993);
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: medium;
+    color: white;
+    font-weight: bold;
 }
