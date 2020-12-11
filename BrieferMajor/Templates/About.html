@@ -11,7 +11,8 @@
         <link href='https://fonts.googleapis.com/css?family=Bad Script' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+        
+        <link rel="stylesheet" href="{% static 'css/about.css' %}">
         <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
@@ -51,12 +52,83 @@
         
         <!--END VOICE-->
 
-        <!--SECTIONS-->
-        <div class="container-fluid">
+         <div class="container-fluid">
             <div id="about">
                 <h1 class="display-1" style="text-align: center;">About</h1>
                 <div class="container-fluid">
-    
+
+        <div class="row">
+                <div class="col-3" id="flipdes1">
+                  <div class="flip-card">
+                      <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                              <img src="{% static 'images/summary.gif'%}" alt="Avatar" style="width:280px;height:280px;border-radius:20px">
+                                </div>
+                              <div class="flip-card-back">
+                             
+                              <span>Briefer provides a summary of input to the user in the form or either text or via speech. It can take input as text, speech or document. Text summarization will be achieved.</span> 
+                            
+                          </div>
+                        </div>
+                  </div>
+                  </div>
+                  
+
+                  <div class="col-3" id="flipdes2">
+                  <div class="flip-card">
+                      <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                              <img src="{% static 'images/optimize.gif'%}" alt="Avatar" style="width:280px;height:280px;border-radius:20px">
+                                </div>
+                              <div class="flip-card-back">
+                             
+                              <span>Briefer renders scope for optimization of text such as most frequent words, spelling corrections, grammar corrections, etc.</span> 
+                            
+                          </div>
+                        </div>
+                  </div>
+                  </div>
+                 
+                  <div class="col-3" id="flipdes3">
+                  <div class="flip-card">
+                      <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                              <img src="{% static 'images/senti.gif'%}" alt="Avatar" style="width:280px;height:280px;border-radius:20px">
+                                </div>
+                              <div class="flip-card-back">
+                             
+                             <span>Briefer provides sentiment analysis which determines the inclination of the text either positive, negative or neutral.</span>
+                            
+                          </div>
+                        </div>
+                  </div>
+                  </div>
+
+                  <div class="col-3" id="flipdes4">
+                  <div class="flip-card">
+                      <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                              <img src="{% static 'images/translate.gif'%}" alt="Avatar" style="width:280px;height:280px;border-radius:20px">
+                                </div>
+                              <div class="flip-card-back">
+                             
+                              <span>As Briefer will cater to a large audience from around the globe hence it also allows users to translate the summary into their desired language.</span>
+                            
+                          </div>
+                        </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              </div>
+
+       <!-- <div class="container-fluid">
+            <div id="about">
+                <h1 class="display-1" style="text-align: center;">About</h1>
+                <div class="container-fluid">
+                
+                 
                   <div class="row">
                     <div class="col-12" id="mainarea">
                     <span>Extracting and summarizing information from large textual documents or articles or any essays, etc is harder for an individual to do it manually. So here is Briefer, a web-based application introduced to provide you with an opportunity to interact with your text using our features.</span>
@@ -76,7 +148,7 @@
                 </div>
                 
               </div>
-        </div>
+        </div>-->
         <!--END SECTIONS-->
         <!-- <script>
             $(document).ready(function (){
