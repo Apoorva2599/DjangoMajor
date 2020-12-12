@@ -1,8 +1,46 @@
 .ml9 {
     position: relative;
-    font-weight: 200;
-    font-size: 4em;
+    margin-top: 70px;
+    text-align: center;
+    font-family: 'Cabin Sketch';
+    color: white;
   }
+  span{
+    font-family: 'Cabin Sketch';
+    font-weight: normal !important;
+    margin-bottom: -50px;
+  }
+@media only screen and  (min-width: 500px) {
+    .letters span, .ml9{
+        font-size: 2.3rem;  
+    }
+}
+@media only screen and  (min-width: 625px) {
+  .letters span, .ml9{
+        font-size: 3rem;  
+    }
+}
+
+ /* Small devices (tablets, 768px and up) */
+@media only screen and  (min-width: 768px) {
+  .letters span, .ml9{
+        font-size: 3.8rem;  
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .letters span, .ml9{
+        font-size: 4.8rem;  
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .letters span,.ml9 {
+        font-size: 5.6rem;  
+    }
+}
   
   .ml9 .text-wrapper {
     position: relative;

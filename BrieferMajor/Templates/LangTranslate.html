@@ -7,9 +7,10 @@
         <title>
             Briefer
         </title>
-        <link href='https://fonts.googleapis.com/css?family=Averia Sans Libre' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Pangolin' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Bad Script' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Fredericka the Great' rel='stylesheet'>
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/home.css' %}">
         <link rel="stylesheet" href="{% static 'css/animate.css' %}">
@@ -19,7 +20,7 @@
         
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-        <script src="{% static 'js/textanime.js' %}"></script>
+        
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
 
     </head>
@@ -62,9 +63,9 @@
           <div id="languageTrans">
              <h2 class="ml9">
                       <div class="text-wrapper">
-                        <div class="letters">Coffee mornings</div>
+                        <div class="letters">LANGUAGE TRANSLATOR</div>
                           </div>
-                  </h2>
+              </h2>
               <div class="container">
   
                 <div class="row" id="Ltextareas">
@@ -107,6 +108,7 @@
                         <div class="col-4">
                           
                           <select name="in_lang">
+                            <option value="" disabled selected>Input Language</option>
                             {% for l in language %}
                                 <option value="{{ l }}">{{ l }}</option>
                             {% endfor %}
@@ -114,6 +116,7 @@
                         </div>
                         <div class="col-4">
                           <select name="out_lang">
+                            <option value="" disabled selected>Output Language</option>
                             {% for l in language %}
                                 <option value="{{ l }}">{{ l }}</option>
                             {% endfor %}
@@ -143,7 +146,7 @@
             }); 
         </script>
         <script src="https://kit.fontawesome.com/dba7b28fc9.js" crossorigin="anonymous"></script>
-        
+        <script src="{% static 'js/textanime.js' %}"></script>
     
     </body>
 </html>

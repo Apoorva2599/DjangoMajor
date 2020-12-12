@@ -23,12 +23,18 @@
 }
 
 textarea{
+    font-family: 'Pangolin';
+    font-weight: bold;
+    font-size: large;
+    font-style: italic;
     resize:none;
     overflow: auto;
     width: 100%;
     height: 100%;
     position: relative;
     border-radius: 10px;
+    background-image:url(https://img.glyphs.co/img?q=85&w=900&src=aHR0cHM6Ly9zMy5tZWRpYWxvb3QuY29tL2Jsb2ctaW1hZ2VzL0NQVFAtSW1hZ2UtMTEuanBnP210aW1lPTIwMTgxMTE2MTUzMTA5);
+	background-repeat:repeat-y, repeat;
 }
 
 #langinputs,#summaryinputs{
@@ -41,6 +47,19 @@ textarea{
     border: 2px solid white;
     font-size: small;
     color: white;
+    font-weight: bold;
+}
+select{
+    width: 100%;
+    position: relative;
+    background-color:rgba(245, 108, 92, 0.993);
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: medium;
+    color: white;
+    font-weight: bold;
+}
+select option{
     font-weight: bold;
 }
 input::placeholder{
@@ -124,11 +143,11 @@ textarea::placeholder{
     font-weight: bold;
 }
 #bi{
-    background-color:#90EE90;
+    background-color:rgb(126, 183, 185);
     width: 100%;
     margin: auto;
     position: relative;
-    color: black;
+    color:white;
     border: 2px solid white;
     border-radius: 5px;
     font-size: medium;
@@ -136,7 +155,7 @@ textarea::placeholder{
 
 }
 #bi:hover{
-    background-color: rgb(233, 48, 63);
+    background-color:  rgb(80, 161, 185);
     color: white;
 }
 

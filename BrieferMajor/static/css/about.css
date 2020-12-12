@@ -8,7 +8,7 @@
   .navbar-brand{
     font-family: 'Cabin Sketch';
   }
-  li{
+  .navbar-nav li{
       text-align: center;
       padding: .3rem 1.5rem;
       font-size: 17px;
@@ -18,7 +18,7 @@
     font-family: 'Bad Script';
     font-weight: bold;
   }
-  li:hover{
+  .navbar-nav li:hover{
       background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
       background-size: 100% 100%;
       color: #27262c;
@@ -26,7 +26,7 @@
       text-shadow: 0 -1px 0 #ef816c;
       font-weight: bold;
   }
-  li.active {
+  .navbar-nav li.active {
       background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
       background-size: 100% 100%;
       color: #27262c;
@@ -88,13 +88,11 @@
   
   span{
     color: white !important;
-    font-family: 'Cabin Sketch';
+    font-family: 'Bad Script';
     text-align: center;
     font-weight: bold;
     margin: auto;
     display: block;
-    padding: 5%;
-    font-size:0.9em;
   }
   
   h3{
@@ -150,8 +148,9 @@
     background-color:rgba(241, 136, 124, 0.993);
     color: white;
     transform: rotateY(180deg);
-    font-size: x-large;
+    font-size: 1.3em;
     border-radius: 20px;
+    padding: 5px;
   }
 
  

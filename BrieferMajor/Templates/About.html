@@ -13,8 +13,11 @@
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         
         <link rel="stylesheet" href="{% static 'css/about.css' %}">
+        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'css/footer.css' %}">
         <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
         
     </head>
@@ -38,9 +41,9 @@
                         <a class="nav-link" href="{% url 'LangTranslate' %}">Translate</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="{% url 'Sentiment' %}">Sentiment</a>
+                          <a class="nav-link" href="{% url 'Sentiment' %}">Analyze</a>
                         </li>
-                      <li class="nav-item">
+                      <li class="nav-item active">
                           <a class="nav-link" href="{% url 'About' %}">About</a>
                       </li>      
                   </ul>
@@ -54,7 +57,11 @@
 
          <div class="container-fluid">
             <div id="about">
-                <h1 class="display-1" style="text-align: center;">About</h1>
+              <h2 class="ml9">
+                <div class="text-wrapper">
+                  <div class="letters">ABOUT</div>
+                    </div>
+        </h2>
                 <div class="container-fluid">
 
         <div class="row">
@@ -122,6 +129,27 @@
               </div>
               </div>
               </div>
+              <footer class="site-footer">
+ 
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-8 col-sm-6 col-xs-12">
+                      <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
+                   <a href="#">BRIEFER</a>.
+                      </p>
+                    </div>
+          
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                      <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+          </footer>
 
        <!-- <div class="container-fluid">
             <div id="about">
@@ -165,7 +193,7 @@
             
         </script> -->
         <script src="https://kit.fontawesome.com/dba7b28fc9.js" crossorigin="anonymous"></script>
-        
+        <script src="{% static 'js/textanime.js' %}"></script>
     
     </body>
 </html>

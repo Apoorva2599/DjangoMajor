@@ -8,7 +8,7 @@ html{
 .navbar-brand{
   font-family: 'Cabin Sketch';
 }
-li{
+.navbar-nav li{
     text-align: center;
     padding: .3rem 1.5rem;
     font-size: 17px;
@@ -18,7 +18,7 @@ li{
   font-family: 'Bad Script';
   font-weight: bold;
 }
-li:hover{
+.navbar-nav li:hover{
     background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
     background-size: 100% 100%;
     color: #27262c;
@@ -26,7 +26,7 @@ li:hover{
     text-shadow: 0 -1px 0 #ef816c;
     font-weight: bold;
 }
-li.active {
+.navbar-nav li.active {
     background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
     background-size: 100% 100%;
     color: #27262c;
@@ -93,7 +93,7 @@ span{
   font-weight: bold;
   margin: auto;
   display: block;
-  font-size:xx-large;
+  
 }
 
 h3{
@@ -188,26 +188,34 @@ h5.modal-title{
 
 
 #homerow{
-  margin-top: 10%;
+  margin-top: 8%;
   padding-top: 7%;
-  overflow: hidden;
-  
   
   border-radius: 10px;
 
 }
-
+#imgrow, #titlesrow{
+  padding: 5px;
+  justify-content: center;
+  text-align: center;
+}
+#imgrow img{
+  border: 2px solid  #d9524a;
+  border-radius: 5px;
+  padding: 0;
+}
+#titlesrow p{
+  font-family: 'Cabin Sketch';
+  color: white;
+  font-weight: bold;
+}
 #fronttext {
   color:rgb(255, 255, 255);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Bad Script';
   text-align: justify;
- 
   font-size: x-large;
-  
-  
-  ;
-  border-radius: 10px;
-  
+  border-radius: 10px; 
+  font-weight: bolder;
 }
 
 #linkid{
@@ -216,7 +224,7 @@ h5.modal-title{
   background-color: #d9524a;
   font-size: x-large;
   padding: 2% 2% ;
-  margin-top: 3%;
+  margin-top: 1%;
   margin-bottom: 2%;
   text-decoration: none;
   color: white;
@@ -249,7 +257,7 @@ h5.modal-title{
 }
 
 .card{
-  padding : 2%;
+  padding : 5%;
   
 }
 
@@ -258,11 +266,14 @@ h5.modal-title{
 }
 
 .card-content{
-  text-align: justify;
+  
   flex-wrap: wrap;
   height: 3%;
 }
 
-.card-title{
-  color:black;
+span.card-title{
+  color:black !important;
+  font-size: 1.5em;
+  font-family: 'Cabin Sketch';
+  margin-top: 10px;
 }
