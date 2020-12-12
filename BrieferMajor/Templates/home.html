@@ -9,9 +9,16 @@
         </title>
         <link href='https://fonts.googleapis.com/css?family=Averia Sans Libre' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Bad Script' rel='stylesheet'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">        
         <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/home.css' %}">
+        
+
         <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
@@ -37,7 +44,7 @@
                       <a class="nav-link" href="{% url 'LangTranslate' %}">Translate</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'Sentiment' %}">Sentiment</a>
+                        <a class="nav-link" href="{% url 'Sentiment' %}">Analyze</a>
                       </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'About' %}">About</a>
@@ -67,11 +74,137 @@
             </div>
         </div>
         <!--END VOICE-->
+        
         <div class="container-fluid">
-
+          <section id="1">
           <div id="home">
-            <h1 id="headdef">BRIEFER</h1>
+            <!--<h1 id="headdef">BRIEFER</h1>-->
+            <div class="container">
+               <div class="row" id="homerow">
+                  <div class="col-md-6 col-12">
+                    
+                     <p id="fronttext">Brief it out!!!<br>
+                        Too much to comprehend,we will do it for you.<br>
+                        Range it and let Briefer change it.<br> 
+                        Type,Swipe or just give a hint and will wipe.</p>
+                       <div class="row">
+                     
+                     <img src="{% static 'images/text.gif'%}" alt="Avatar" style="width:30%;height:30%;">
+                    
+                    
+                     <img src="{% static 'images/image16.gif'%}" alt="Avatar" style="width:30%;height:30%;">
+                    
+                    <img src="{% static 'images/image17.gif'%}" alt="Avatar" style="width:30%;height:30%;">
+                   
+                    </div>
+                    <br>
+                    <br>
+                       <a id="linkid" href="#second">Get Started</a> 
+                     
+                     
+
+                  </div>
+                  <div class="col-md-6 col-12">
+                     <h1 id="headdef">BRIEFER</h1>
+                     
+                     
+                    
+                     
+                     
+                  </div>
+               </div>
+            </div>
           </div>
+          </section>
+
+          <section id="second">
+                <div id="home">
+                    
+
+                  <!--flipcards-->
+
+                  <div class="row" id="frontrow">
+                      <div class="col-3">
+                           <div class="card">
+                              <div class="card-image">
+                                    <img src="{% static 'images/summaryicon.png'%}" style="width:80%; height:80%;">
+                                     <span class="card-title">Card Title</span>
+                                       </div>
+                                     <div class="card-content">
+                                  <p>It summarizes your given text.
+                                      The frequency count option takes the number of lines you want in your summary.
+                                      Happy Briefing ;)</p>
+                                   </div>
+                               <div class="card-action">
+                               <a href="#">This is a link</a>
+                             </div>
+                               </div>
+                      </div>
+
+
+                      <div class="col-3">
+                           <div class="card">
+                              <div class="card-image">
+                                    <img src="{% static 'images/optimizeicon.png'%}" style="width:80%; height:80%;">
+                                     <span class="card-title">Card Title</span>
+                                       </div>
+                                     <div class="card-content">
+                                  <p>It optimizes your text by removing spelling errors and grammatical mistakes. It also provides a list of synonyms with which you can replace the words that have been used most frequently.  
+                                   </p>
+                                   </div>
+                               <div class="card-action">
+                               <a href="#">This is a link</a>
+                             </div>
+                               </div>
+                      </div>    
+
+
+
+                      <div class="col-3">
+                           <div class="card">
+                              <div class="card-image">
+                                    <img src="{% static 'images/graph.png'%}" style="width:80%; height:80%;">
+                                     <span class="card-title">Card Title</span>
+                                       </div>
+                                     <div class="card-content">
+                                  <p>Analyzer helps to know overall emotion of the text.It provides you with 4 results - Positive %, Negative %, Neutral % and Compound % (overall inclination of your text). 
+                                  </p>
+                                   </div>
+                               <div class="card-action">
+                               <a href="#">This is a link</a>
+                             </div>
+                               </div>
+                      </div>    
+
+
+
+                      <div class="col-3">
+                           <div class="card">
+                              <div class="card-image">
+                                    <img src="{% static 'images/translation.png'%} " style="width:80%; height:80%;">
+                                     <span class="card-title">Card Title</span>
+                                       </div>
+                                     <div class="card-content">
+                                  <p>It takes your input language and an output language to which you want to change your text to and translates it accordingly.
+                                  </p>
+                                   </div>
+                               <div class="card-action">
+                               <a href="#">This is a link</a>
+                             </div>
+                               </div>
+                      </div>                   
+                </div>
+
+
+                  <!--Flip cards-->
+
+
+
+
+
+                </div>
+
+          </section>
         </div>  
         
         <script>
