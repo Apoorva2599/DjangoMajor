@@ -3,12 +3,14 @@
     margin-top: 70px;
     text-align: center;
     font-family: 'Cabin Sketch';
-    color: white;
+    color: #27262c;
+    margin-bottom: 0%;
   }
   span{
     font-family: 'Cabin Sketch';
     font-weight: normal !important;
-    margin-bottom: -50px;
+    margin-bottom: -5%;
+    color: #27262c !important;
   }
 @media only screen and  (min-width: 500px) {
     .letters span, .ml9{

@@ -4,6 +4,9 @@
 html{
   scroll-behavior: smooth;
 }
+canvas{
+  position: fixed;
+}
 /*NAV ITEMS*/
 .navbar-brand{
   font-family: 'Cabin Sketch';
@@ -15,8 +18,9 @@ html{
 }
 .nav-link{
   color: white !important;
-  font-family: 'Bad Script';
-  font-weight: bold;
+  font-family: 'Englebert';
+  font-weight: normal;
+  font-size: 1.2em;
 }
 .navbar-nav li:hover{
     background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
@@ -66,7 +70,8 @@ html{
   margin: auto;
   max-width: none;
   height: 100vh;
-  background-color: #ef816c;
+  
+  
 }
 
 /*END MAIN AREA*/
@@ -88,7 +93,7 @@ h1{
 
 span{
   color: white !important;
-  font-family: 'Bad Script';
+  font-family: 'Englebert';
   text-align: center;
   font-weight: bold;
   margin: auto;
@@ -111,17 +116,30 @@ h3{
 
 /*Voice Assistant*/
 .modal-content{
-  background-color: rgba(243, 136, 136, 0.849);
+  background-color: rgba(255, 255, 255, 0.774);
+  color: #27262c;
+  overflow-y: auto;
+  max-height: 500px;
+  
+}
+.modal-title{
+  font-family: 'Englebert';
+  margin: auto;
+  font-size: 1.8em;
+}
+.modal-header{
+  background-color: rgb(27, 113, 184);
   color: white;
 }
-h5.modal-title{
-  text-align: center;
+.modal-header .close{
+  margin: 0;
 }
+
 #result{
   position: relative;
 }
 #userchat{
-  background-color:  rgb(204, 82, 82);
+  background-color:  rgb(46, 105, 153);
   border-radius: 8px;
   padding: 5px;
   color: white;
@@ -130,7 +148,7 @@ h5.modal-title{
 }
 
 #asstchat{
-  background-color: rgb(53, 52, 52);
+  background-color: rgb(73, 70, 70);
   color: white;
   border-radius: 8px;
   padding: 5px;
@@ -148,7 +166,7 @@ h5.modal-title{
 }
 
 #headdef {
-  color: #fffbf1;
+  color: #27262c;
   text-shadow: 0 20px 25px #2e2e31, 0 40px 40px #2e2e31;
   font-size: 80px;
   font-weight: bold;
@@ -174,21 +192,22 @@ h5.modal-title{
   border: 15px solid red;
   transform: translateX(-50%) translateY(-50%) rotate(0deg);
   animation: 6s infinite alternate ease-in-out tipsy;
+  
 }
 
 #headdef:before {
-  border-color: #d9524a #d9524a rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+  border-color: rgb(27, 113, 184) rgb(27, 113, 184) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
   z-index: -1;
 }
 
 #headdef:after {
-  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #d9524a #d9524a;
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgb(27, 113, 184) rgb(27, 113, 184);
   box-shadow: 25px 25px 25px rgba(46, 46, 49, .8);
 }
 
 
 #homerow{
-  margin-top: 8%;
+  margin-top: 5%;
   padding-top: 7%;
   
   border-radius: 10px;
@@ -200,43 +219,50 @@ h5.modal-title{
   text-align: center;
 }
 #imgrow img{
-  border: 2px solid  #d9524a;
+  border: 5px solid #27262c;
   border-radius: 5px;
   padding: 0;
+  width: 31%;
 }
 #titlesrow p{
   font-family: 'Cabin Sketch';
-  color: white;
+  color: #2e2e31;
   font-weight: bold;
 }
+#briefitout{
+  color: #27262c;
+  font-weight: bold;
+  font-size: 4em;
+  font-family: 'Barrio';
+}
 #fronttext {
-  color:rgb(255, 255, 255);
-  font-family: 'Bad Script';
+  color: #2e2e31;
+  font-family: 'Englebert';
   text-align: justify;
   font-size: x-large;
   border-radius: 10px; 
-  font-weight: bolder;
+  font-weight: bold;
+  background-color: white;
 }
 
 #linkid{
  
   float: right;
-  background-color: #d9524a;
-  font-size: x-large;
-  padding: 2% 2% ;
+  background-color: rgb(27, 113, 184);
+  font-size: 0.9em;
+  padding: 3% 3% ;
   margin-top: 1%;
   margin-bottom: 2%;
   text-decoration: none;
   color: white;
-  font-size: large;
   text-shadow: black ;
-  font-family:'Playfair Display', serif ;
+  font-family:'Englebert';
   
   
 }
   
   #linkid:hover{
-    background-color: #e6767091;
+    background-color: rgb(0, 100, 182);
   }
 
 
@@ -257,8 +283,9 @@ h5.modal-title{
 }
 
 .card{
+  display: flex;
   padding : 5%;
-  
+  border: 3px solid #27262c;
 }
 
 .card-image{
@@ -266,7 +293,7 @@ h5.modal-title{
 }
 
 .card-content{
-  
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   flex-wrap: wrap;
   height: 3%;
 }
@@ -276,4 +303,9 @@ span.card-title{
   font-size: 1.5em;
   font-family: 'Cabin Sketch';
   margin-top: 10px;
+}
+
+.card-action > a{
+  text-decoration: none;
+  font-weight: bold;
 }

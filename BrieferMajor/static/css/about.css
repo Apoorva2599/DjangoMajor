@@ -15,8 +15,9 @@
   }
   .nav-link{
     color: white !important;
-    font-family: 'Bad Script';
-    font-weight: bold;
+    font-family: 'Englebert';
+    font-weight: normal;
+    font-size: 1.2em;
   }
   .navbar-nav li:hover{
       background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
@@ -66,8 +67,11 @@
     margin: auto;
     max-width: none;
     height: 100vh;
-    background-color: #ef816c;
   }
+  #about{
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRjoSeYEnZCVzAKE_jQV7nl2nP6aNkwBUM8w&usqp=CAU) no-repeat;
+    background-size: cover;
+}
   
   /*END MAIN AREA*/
   
@@ -88,7 +92,7 @@
   
   span{
     color: white !important;
-    font-family: 'Bad Script';
+    font-family: 'Englebert';
     text-align: center;
     font-weight: bold;
     margin: auto;
@@ -145,12 +149,13 @@
   }
   
   .flip-card-back {
-    background-color:rgba(241, 136, 124, 0.993);
+    background-color: rgb(91, 170, 235);
     color: white;
     transform: rotateY(180deg);
     font-size: 1.3em;
     border-radius: 20px;
     padding: 5px;
+    font-family: 'Englebert';
   }
 
  

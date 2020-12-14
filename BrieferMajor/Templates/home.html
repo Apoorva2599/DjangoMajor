@@ -7,8 +7,8 @@
         <title>
             Briefer
         </title>
-        <link href='https://fonts.googleapis.com/css?family=Averia Sans Libre' rel='stylesheet'>
-        <link href='https://fonts.googleapis.com/css?family=Bad Script' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Barrio' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Englebert' rel='stylesheet'>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet"> 
@@ -22,11 +22,14 @@
 
         <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        
         
     </head>
     <body>
-        <header>
+        <header  id="homepage">
             <!--NAV BAR-->
             <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
                 <a class="navbar-brand" href="{% url 'home' %}">BRIEFER</a>
@@ -56,11 +59,11 @@
             <!--END NAV-->
         </header>
         <!--VOICE ASSISTANT-->
-        <div id="myModal" class="modal fade">
+        <div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Hey There! Welcome to Briefer</h5>
+                        <h5 class="modal-title">Hey There! Welcome to Briefer!</h5>
                         <button type="button" class="close" data-dismiss="modal" id="closebtn">&times;</button>
                     </div>
                     <div class="modal-body" id="modalbody">
@@ -77,22 +80,22 @@
         <!--END VOICE-->
         
         <div class="container-fluid">
-          <section id="1">
+          <section id="first">
           <div id="home">
             <!--<h1 id="headdef">BRIEFER</h1>-->
             <div class="container">
                <div class="row" id="homerow">
                   <div class="col-md-6 col-12">
-                    
-                     <p id="fronttext">Brief it out!!!<br>
-                        Too much to comprehend,we will do it for you.<br>
-                        Briefer allows you to provide your text in different ways. Check it out.<br> </p>
+                    <p id="briefitout">Brief It Out!!</p>
+                     <p id="fronttext">
+                        Too much to comprehend, we will do it for you.
+                        Briefer allows you to provide your text in different ways.<br> </p>
                        <div class="row" id="imgrow">
-                        <img src="{% static 'images/text.gif'%}" alt="Avatar" class="col-4">
+                        <img src="{% static 'images/text.gif'%}" alt="Avatar" class="mr-2">
                         
-                        <img src="{% static 'images/image16.gif'%}" alt="Avatar" class="col-4">
+                        <img src="{% static 'images/image16.gif'%}" alt="Avatar" class="mr-2">
                         
-                        <img src="{% static 'images/image17.gif'%}" alt="Avatar" class="col-4">
+                        <img src="{% static 'images/image17.gif'%}" alt="Avatar" class="mr-2">
                    
                     </div>
                     <div class="row" id="titlesrow">
@@ -235,7 +238,7 @@
         </script>
         <script src="https://kit.fontawesome.com/dba7b28fc9.js" crossorigin="anonymous"></script>
         <script src="{% static 'js/main.js' %}"></script>
-        
+        <script src="{% static 'js/particles.js' %}"></script>
   
     </body>
 </html>

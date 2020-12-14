@@ -1,12 +1,16 @@
+#summary{
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRjoSeYEnZCVzAKE_jQV7nl2nP6aNkwBUM8w&usqp=CAU) no-repeat;
+    background-size: cover;
+}
+
 #Stextareas > form{
-    background-color:rgba(21, 21, 27, 0.158);
+    
     height: 400px;
     padding: 20px;
     position: relative;
     text-align: center;
     border-radius: 5px;
 }
-
 
 #text{
     height:68%;
@@ -32,7 +36,8 @@ textarea{
     width: 100%;
     height: 100%;
     position: relative;
-    border-radius: 10px;
+    border: 5px double steelblue;
+    border-radius: 5px;
     background-image:url(https://img.glyphs.co/img?q=85&w=900&src=aHR0cHM6Ly9zMy5tZWRpYWxvb3QuY29tL2Jsb2ctaW1hZ2VzL0NQVFAtSW1hZ2UtMTEuanBnP210aW1lPTIwMTgxMTE2MTUzMTA5);
 	background-repeat:repeat-y, repeat;
 }
@@ -83,7 +88,7 @@ textarea::placeholder{
     width: 100%;
     margin: auto;
     position: relative;
-    background-color:rgba(245, 108, 92, 0.993);
+    background-color:rgb(126, 183, 185);
     border: 2px solid white;
     border-radius: 5px;
     font-size: 0.8rem;
@@ -95,7 +100,7 @@ textarea::placeholder{
     width: 100%;
     margin: auto;
     position: relative;
-    background-color:rgba(245, 108, 92, 0.993);
+    background-color:rgb(126, 183, 185);
     border: 2px solid white;
     border-radius: 5px;
     font-size: medium;
@@ -135,7 +140,7 @@ textarea::placeholder{
 }
 #userop{
     padding:2%;    
-    color:white;
+    color:#27262c;
     font-family: cursive;
     font-size: 0.9em;
     margin-bottom: 2%;
@@ -160,27 +165,12 @@ textarea::placeholder{
 }
 
 
-#userop:hover{
-    background-color: wheat;
-    color:black;
-    border-radius: 1em;
-    font-weight: bold;
-    width: 100%;
-    margin: 0 auto 2% auto;
-}
-
 #Ltextareas #userop{
     padding:2%;
-    color:white;
+    color: #27262c;
     font-family: cursive;
     font-size: 1em;
     width: 100%;
     margin: 0 auto 2% auto;
 }
 
-#Ltextareas #userop:hover{
-    background-color: wheat;
-    color:black;
-    border-radius: 1em;
-    font-weight: 800;
-}
