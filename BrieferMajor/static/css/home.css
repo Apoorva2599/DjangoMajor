@@ -23,19 +23,19 @@ canvas{
   font-size: 1.2em;
 }
 .navbar-nav li:hover{
-    background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh1R9V1yDkgUQjAW2mjNADcBEoYxUjsQNwNw&usqp=CAU');
     background-size: 100% 100%;
     color: #27262c;
     animation: spring 300ms ease-out;
-    text-shadow: 0 -1px 0 #ef816c;
+    text-shadow: 0 -1px 0 rgb(27, 113, 184);
     font-weight: bold;
 }
 .navbar-nav li.active {
-    background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh1R9V1yDkgUQjAW2mjNADcBEoYxUjsQNwNw&usqp=CAU');
     background-size: 100% 100%;
     color: #27262c;
     animation: spring 300ms ease-out;
-    text-shadow: 0 -1px 0 #ef816c;
+    text-shadow: 0 -1px 0 rgb(27, 113, 184);
     font-weight: bold;
 }
 
@@ -297,7 +297,9 @@ h3{
   flex-wrap: wrap;
   height: 3%;
 }
-
+.card-content p{
+  height: 150px;
+}
 span.card-title{
   color:black !important;
   font-size: 1.5em;
