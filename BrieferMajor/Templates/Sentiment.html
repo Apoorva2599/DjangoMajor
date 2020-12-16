@@ -78,7 +78,7 @@
                       <div class="col-2" >
                         <div class="form-check-inline">
                           <label class="form-check-label" for="text_up">
-                          <input type="checkbox" class="form-check-input" id="text_up" name="text_up" value="text_up" checked>Text
+                          <input type="checkbox" class="form-check-input" id="text_up" name="text_up" value="text_up">Text
                           </label>
                         </div>
                       </div>
@@ -97,7 +97,12 @@
                           </label>
                         </div>
                       </div>
-                    <div class="col-6" >
+                      <script type="text/javascript">
+                        $('.form-check-input').on('change', function() {
+                            $('.form-check-input').not(this).prop('checked', false);  
+                        });
+                      </script>
+                    <div class="col-6" id="file-up" >
                         <input type="file" id="file" name="file">
                       </div>
                   </div>
@@ -153,6 +158,22 @@
 
             
         </script>
+         <script type="text/javascript">
+          //Near checkboxes
+         $('.form-check-input').click(function() {
+             $(this).siblings('input:checkbox').prop('checked', false);
+         });
+       </script>
+        <script>
+          document.getElementById('upld').onchange = function(){
+             if(this.checked) {document.getElementById('file-up').style.display='block';
+             //more js statements
+             }
+             else {document.getElementById('file-up').style.display='none';
+             //more js statements
+             }
+          }
+          </script>
         <script src="https://kit.fontawesome.com/dba7b28fc9.js" crossorigin="anonymous"></script>
         
     
