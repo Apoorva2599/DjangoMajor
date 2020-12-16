@@ -20,7 +20,7 @@
     font-size: 1.2em;
   }
   .navbar-nav li:hover{
-      background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/f1/HILLBLU_button_background.svg');
       background-size: 100% 100%;
       color: #27262c;
       animation: spring 300ms ease-out;
@@ -28,7 +28,7 @@
       font-weight: bold;
   }
   .navbar-nav li.active {
-      background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/f1/HILLBLU_button_background.svg');
       background-size: 100% 100%;
       color: #27262c;
       animation: spring 300ms ease-out;

@@ -1,60 +1,65 @@
-.ml9 {
-    position: relative;
-    margin-top: 70px;
-    text-align: center;
-    font-family: 'Cabin Sketch';
-    color: #27262c;
-    margin-bottom: 0%;
-  }
-  span{
-    font-family: 'Cabin Sketch';
-    font-weight: normal !important;
-    margin-bottom: -5%;
-    color: #27262c !important;
-  }
-@media only screen and  (min-width: 500px) {
-    .letters span, .ml9{
-        font-size: 2.3rem;  
-    }
-}
-@media only screen and  (min-width: 625px) {
-  .letters span, .ml9{
-        font-size: 3rem;  
-    }
+.typewriter {
+  color: #000;
+  font-family: "Cabin Sketch";
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+    /*The typwriter cursor*/
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 0; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  font-size: 6em;
+  
+  animation: 
+    typing 2.5s steps(30, end),
+    blink-caret .5s step-end infinite;
 }
 
- /* Small devices (tablets, 768px and up) */
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(27, 113, 184)}
+}
+
+#textanimation{
+  
+  display:flex;
+  justify-content: center;
+  padding-top: 6%;
+}
+
+@media only screen and  (min-width: 500px) {
+  .typewriter{
+      font-size: 2.3rem;  
+  }
+}
+@media only screen and  (min-width: 625px) {
+  .typewriter{
+      font-size: 3rem;  
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
 @media only screen and  (min-width: 768px) {
-  .letters span, .ml9{
-        font-size: 3.8rem;  
-    }
+  .typewriter{
+      font-size: 3.8rem;  
+  }
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  .letters span, .ml9{
-        font-size: 4.8rem;  
-    }
+  .typewriter{
+      font-size: 4.8rem;  
+  }
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  .letters span,.ml9 {
-        font-size: 5.6rem;  
-    }
+  .typewriter {
+      font-size: 5.6rem;  
+  }
 }
-  
-  .ml9 .text-wrapper {
-    position: relative;
-    display: inline-block;
-    padding-top: 0.2em;
-    padding-right: 0.05em;
-    padding-bottom: 0.1em;
-    overflow: hidden;
-  }
-  
-  .ml9 .letter {
-    transform-origin: 50% 100%;
-    display: inline-block;
-    line-height: 1em;
-  }

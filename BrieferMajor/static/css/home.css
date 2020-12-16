@@ -23,7 +23,7 @@ canvas{
   font-size: 1.2em;
 }
 .navbar-nav li:hover{
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh1R9V1yDkgUQjAW2mjNADcBEoYxUjsQNwNw&usqp=CAU');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/f1/HILLBLU_button_background.svg');
     background-size: 100% 100%;
     color: #27262c;
     animation: spring 300ms ease-out;
@@ -31,7 +31,7 @@ canvas{
     font-weight: bold;
 }
 .navbar-nav li.active {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh1R9V1yDkgUQjAW2mjNADcBEoYxUjsQNwNw&usqp=CAU');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/f1/HILLBLU_button_background.svg');
     background-size: 100% 100%;
     color: #27262c;
     animation: spring 300ms ease-out;
@@ -282,10 +282,12 @@ h3{
   background-color: white;
 }
 
+
 .card{
   display: flex;
   padding : 5%;
   border: 3px solid #27262c;
+  margin-bottom: 10px;
 }
 
 .card-image{
