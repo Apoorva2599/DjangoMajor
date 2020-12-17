@@ -10,6 +10,7 @@ canvas{
 /*NAV ITEMS*/
 .navbar-brand{
   font-family: 'Cabin Sketch';
+  font-size: 2em;
 }
 .navbar-nav li{
     text-align: center;

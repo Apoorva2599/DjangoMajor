@@ -1,5 +1,9 @@
+#sentiment{
+    background: url("https://i.ytimg.com/vi/R9mXtzn8meE/maxresdefault.jpg") no-repeat;
+    background-size: cover;
+}
 #Setextareas > form{
-    background-color:rgba(21, 21, 27, 0.158);
+    background-color: #27262c33;
     height: 400px;
     padding: 20px;
     position: relative;
@@ -20,9 +24,8 @@ textarea{
     width: 100%;
     height: 100%;
     position: relative;
-    border-radius: 10px;
-    background-image:url(https://img.glyphs.co/img?q=85&w=900&src=aHR0cHM6Ly9zMy5tZWRpYWxvb3QuY29tL2Jsb2ctaW1hZ2VzL0NQVFAtSW1hZ2UtMTEuanBnP210aW1lPTIwMTgxMTE2MTUzMTA5);
-	background-repeat:repeat-y, repeat;
+    border-width: 1px;
+    border-style: solid;
 }
 
 
@@ -31,7 +34,7 @@ textarea{
     font-size: .8rem;
     height: 5em;
     border-radius: 1em;
-    background-color:lightgray;
+    background-color:white;
 }
 
 .progress-bar{
@@ -39,18 +42,20 @@ textarea{
     font-size: 1.2em;
     overflow: visible;
     font-weight: bold;
+    color: #27262c;
+    font-family: "Englebert";
+    letter-spacing: .2em;
 }
 #file{
     width: 100%;
     margin: auto;
     position: relative;
-    background-color:rgba(245, 108, 92, 0.993);
-    border: 2px solid white;
-    border-radius: 5px;
-    font-size: 0.8rem;
+    background-color:rgb(66, 143, 187);
+    border: 1px solid white;
+    border-radius: 2px;
+    font-size: 0.85em;
     color: white;
     font-weight: bold;
-    overflow: hidden;
 }
 @media only screen and  (min-width: 500px) {
     h1 {
@@ -86,7 +91,7 @@ textarea{
 
 #userop{
     padding:2%;    
-    color:white;
+    color:#27262c;
     font-family: cursive;
     font-size: 0.9em;
     margin-bottom: 2%;
@@ -94,15 +99,16 @@ textarea{
     font-weight: bold;
 }
 #bi{
-    background-color:rgb(126, 183, 185);
+    background-color:rgb(66, 143, 187);
     width: 50%;
     margin: auto;
     position: relative;
-    color: white;
-    border: 2px solid white;
-    border-radius: 5px;
+    color:white;
+    border: 1px solid white;
+    border-radius: 2px;
     font-size: medium;
     font-weight: bold;
+    padding: 5px 0;
 }
 #bi:hover{
     background-color: rgb(80, 161, 185);

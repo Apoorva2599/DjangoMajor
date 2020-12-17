@@ -18,10 +18,11 @@
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
-
-    </head>
-    <body>
-        <header>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        
+      </head>
+      <body>
+          <header id="homepage">
             <!--NAV BAR-->
             <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
               <a class="navbar-brand" href="{% url 'home' %}">BRIEFER</a>
@@ -70,7 +71,7 @@
                   <div class="row" id="Otextareas">
                       <form  action="{% url 'Optimize' %}" method="post" class="col-md-6 col-12"  enctype="multipart/form-data">
                         {% csrf_token %}
-                        <textarea name="text" id="text" placeholder="Input your text" >{% if text %}{{ text }}{% endif %}{% if output %}{{output}}{% endif %}</textarea>
+                        <textarea name="text" id="text" placeholder="Paste your text or URL here..." >{% if text %}{{ text }}{% endif %}{% if output %}{{output}}{% endif %}</textarea>
                         
                           
                           <!-- User input options -->
@@ -115,9 +116,9 @@
                     
                       <form class="col-md-6 col-12">
                         {% csrf_token %}
-                        <textarea name="" id="opti">{{optimized}}</textarea>
-                        <div id="synonyms">
-                          <table class="table table-hover table-danger">
+                        <textarea name="" id="opti" readonly placeholder="Your optimized code will appear here!">{{optimized}}</textarea>
+                        <div id="synonyms table-responsive">
+                          <table class="table table-hover table-info">
                             <thead>
                             <tr>
                               <th>Word</th>
@@ -165,7 +166,7 @@
           }
           </script>
         <script src="https://kit.fontawesome.com/dba7b28fc9.js" crossorigin="anonymous"></script>
-        
+        <script src="{% static 'js/particles.js' %}"></script>
     
     </body>
 </html>

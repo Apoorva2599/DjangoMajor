@@ -1,10 +1,15 @@
+#optimize{
+    background: url("https://i.ytimg.com/vi/R9mXtzn8meE/maxresdefault.jpg") no-repeat;
+    background-size: cover;
+}
 #Otextareas > form{
-    background-color:rgba(21, 21, 27, 0.158);
+    
     height: 400px;
     padding: 20px;
     position: relative;
     text-align: center;
     border-radius: 5px;
+    background-color: #27262c33;
 }
 textarea{
     font-family: 'Pangolin';
@@ -16,9 +21,8 @@ textarea{
     width: 100%;
     height: 100%;
     position: relative;
-    border-radius: 10px;
-    background-image:url(https://img.glyphs.co/img?q=85&w=900&src=aHR0cHM6Ly9zMy5tZWRpYWxvb3QuY29tL2Jsb2ctaW1hZ2VzL0NQVFAtSW1hZ2UtMTEuanBnP210aW1lPTIwMTgxMTE2MTUzMTA5);
-	background-repeat:repeat-y, repeat;
+    border-width: 1px;
+    border-style: solid;
 }
 #Otextareas #text{
     height:68%;
@@ -40,9 +44,9 @@ table{
     width: 100%;
     margin: auto;
     position: relative;
-    background-color:rgba(245, 108, 92, 0.993);
-    border: 2px solid white;
-    border-radius: 5px;
+    background-color:rgb(66, 143, 187);
+    border: 1px solid white;
+    border-radius: 2px;
     font-size: 0.8rem;
     color: white;
     font-weight: bold;
@@ -81,7 +85,7 @@ table{
 }
 #userop{
     padding:2%;    
-    color:white;
+    color:#27262c;
     font-family: cursive;
     font-size: 0.9em;
     margin-bottom: 2%;
@@ -89,14 +93,6 @@ table{
     font-weight: bold;
 }
 
-#userop:hover{
-    background-color: wheat;
-    color:black;
-    border-radius: 1em;
-    font-weight: bold;
-    width: 100%;
-    margin: 0 auto 2% auto;
-}
 
 #opti{
     resize:none;
@@ -107,15 +103,16 @@ table{
 }
 
 #bi{
-    background-color:rgb(126, 183, 185);
+    background-color:rgb(66, 143, 187);
     width: 50%;
     margin: auto;
     position: relative;
     color: white;
-    border: 2px solid white;
-    border-radius: 5px;
+    border: 1px solid white;
+    border-radius: 2px;
     font-size: medium;
     font-weight: bold;
+    padding: 5px 0;
 }
 #bi:hover{
     background-color: rgb(80, 161, 185);

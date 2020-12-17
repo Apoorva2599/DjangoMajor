@@ -4,6 +4,9 @@
   html{
     scroll-behavior: smooth;
   }
+  canvas{
+    position: fixed;
+  }
   /*NAV ITEMS*/
   .navbar-brand{
     font-family: 'Cabin Sketch';
@@ -24,7 +27,7 @@
       background-size: 100% 100%;
       color: #27262c;
       animation: spring 300ms ease-out;
-      text-shadow: 0 -1px 0 #ef816c;
+      text-shadow: 0 -1px 0 rgb(27, 113, 184);
       font-weight: bold;
   }
   .navbar-nav li.active {
@@ -32,7 +35,7 @@
       background-size: 100% 100%;
       color: #27262c;
       animation: spring 300ms ease-out;
-      text-shadow: 0 -1px 0 #ef816c;
+      text-shadow: 0 -1px 0 rgb(27, 113, 184);
       font-weight: bold;
   }
   
@@ -69,7 +72,7 @@
     height: 100vh;
   }
   #about{
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRjoSeYEnZCVzAKE_jQV7nl2nP6aNkwBUM8w&usqp=CAU) no-repeat;
+    background: url("https://i.ytimg.com/vi/R9mXtzn8meE/maxresdefault.jpg") no-repeat;
     background-size: cover;
 }
   

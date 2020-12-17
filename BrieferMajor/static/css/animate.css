@@ -5,7 +5,7 @@
     /*The typwriter cursor*/
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 0; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
+  letter-spacing: .1em; /* Adjust as needed */
   font-size: 6em;
   
   animation: 

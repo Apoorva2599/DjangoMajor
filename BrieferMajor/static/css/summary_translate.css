@@ -1,5 +1,5 @@
 #summary{
-    background: url(https://images.unsplash.com/photo-1598103586054-c4b456cbddc4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80) no-repeat;
+    background: url("https://i.ytimg.com/vi/R9mXtzn8meE/maxresdefault.jpg") no-repeat;
     background-size: cover;
 }
 
@@ -10,6 +10,7 @@
     position: relative;
     text-align: center;
     border-radius: 5px;
+    background-color: #27262c33;
 }
 
 #text{
@@ -36,18 +37,8 @@ textarea{
     width: 100%;
     height: 100%;
     position: relative;
-    border-width: 10px;
-  border-style: solid;
-    border-image: 
-    linear-gradient(
-      to bottom, 
-      rgb(27, 113, 184), 
-      #fff
-    ) 1 50% ;
-
-    
-    background-image:url(https://img.glyphs.co/img?q=85&w=900&src=aHR0cHM6Ly9zMy5tZWRpYWxvb3QuY29tL2Jsb2ctaW1hZ2VzL0NQVFAtSW1hZ2UtMTEuanBnP210aW1lPTIwMTgxMTE2MTUzMTA5);
-	background-repeat:repeat-y, repeat;
+    border-width: 1px;
+    border-style: solid;
 }
 
 #langinputs,#summaryinputs{
@@ -56,8 +47,9 @@ textarea{
 #langinputs  input{
     width: 100%;
     position: relative;
-    background-color:rgba(245, 108, 92, 0.993);
-    border: 2px solid white;
+    background-color:rgb(66, 143, 187);
+    border: 1px solid white;
+    border-radius: 2px;
     font-size: small;
     color: white;
     font-weight: bold;
@@ -65,12 +57,13 @@ textarea{
 select{
     width: 100%;
     position: relative;
-    background-color:rgba(245, 108, 92, 0.993);
-    border: 2px solid white;
-    border-radius: 5px;
+    background-color:rgb(66, 143, 187);
+    border: 1px solid white;
+    border-radius: 2px;
     font-size: medium;
     color: white;
     font-weight: bold;
+    padding: 5px 2px;
 }
 select option{
     font-weight: bold;
@@ -85,9 +78,9 @@ textarea::placeholder{
     width: 100%;
     margin: auto;
     position: relative;
-    background-color:rgba(245, 108, 92, 0.993);
-    border: 2px solid white;
-    border-radius: 5px;
+    background-color:rgb(66, 143, 187);
+    border: 1px solid white;
+    border-radius: 2px;
     font-size: 0.85em;
     color: white;
     font-weight: bold;
@@ -96,9 +89,9 @@ textarea::placeholder{
     width: 100%;
     margin: auto;
     position: relative;
-    background-color:rgb(126, 183, 185);
-    border: 2px solid white;
-    border-radius: 5px;
+    background-color:rgb(66, 143, 187);
+    border: 1px solid white;
+    border-radius: 2px;
     font-size: 0.8rem;
     color: white;
     font-weight: bold;
@@ -108,12 +101,13 @@ textarea::placeholder{
     width: 100%;
     margin: auto;
     position: relative;
-    background-color:rgb(126, 183, 185);
-    border: 2px solid white;
-    border-radius: 5px;
+    background-color:rgb(66, 143, 187);
+    border: 1px solid white;
+    border-radius: 2px;
     font-size: medium;
     color: white;
     font-weight: bold;
+    padding: 5px 5px;
 }
 @media only screen and  (min-width: 500px) {
     h1 {
@@ -156,16 +150,16 @@ textarea::placeholder{
     font-weight: bold;
 }
 #bi{
-    background-color:rgb(126, 183, 185);
+    background-color:rgb(66, 143, 187);
     width: 100%;
     margin: auto;
     position: relative;
     color:white;
-    border: 2px solid white;
-    border-radius: 5px;
+    border: 1px solid white;
+    border-radius: 2px;
     font-size: medium;
     font-weight: bold;
-
+    padding: 5px 0;
 }
 #bi:hover{
     background-color:  rgb(80, 161, 185);
