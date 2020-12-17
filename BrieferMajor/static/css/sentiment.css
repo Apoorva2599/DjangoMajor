@@ -4,7 +4,7 @@
 }
 #Setextareas > form{
     background-color: #27262c33;
-    height: 400px;
+    height: 450px;
     padding: 20px;
     position: relative;
     text-align: center;
@@ -30,7 +30,7 @@ textarea{
 
 
 .progress{
-    margin: 20px;
+    margin: 30px;
     font-size: .8rem;
     height: 5em;
     border-radius: 1em;
@@ -41,9 +41,9 @@ textarea{
     padding: 0 20px;
     font-size: 1.2em;
     overflow: visible;
-    font-weight: bold;
+    font-weight:bolder;
     color: #27262c;
-    font-family: "Englebert";
+    font-family: "Pangolin";
     letter-spacing: .2em;
 }
 #file{
@@ -116,14 +116,7 @@ textarea{
 }
 
 
-#userop:hover{
-    background-color: wheat;
-    color:black;
-    border-radius: 1em;
-    font-weight: bold;
-    width: 100%;
-    margin: 0 auto 2% auto;
-}
+
 
 #sentiinputs #file{
     width: 100%;

@@ -5,7 +5,7 @@
 
 #Stextareas > form{
     
-    height: 400px;
+    height: 450px;
     padding: 20px;
     position: relative;
     text-align: center;
@@ -20,7 +20,7 @@
 
 #Ltextareas > form{
     background-color:rgba(21, 21, 27, 0.158);
-    height: 400px;
+    height: 450px;
     padding: 20px;
     position: relative;
     text-align: center;

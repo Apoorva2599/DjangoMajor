@@ -29,7 +29,7 @@
   
   display:flex;
   justify-content: center;
-  padding-top: 6%;
+  margin-top: 80px;
 }
 
 @media only screen and  (min-width: 500px) {
@@ -48,6 +48,7 @@
   .typewriter{
       font-size: 3.8rem;  
   }
+
 }
 
 /* Medium devices (desktops, 992px and up) */

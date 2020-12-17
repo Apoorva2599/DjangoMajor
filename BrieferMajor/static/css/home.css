@@ -314,3 +314,12 @@ span.card-title{
   text-decoration: none;
   font-weight: bold;
 }
+
+
+#inst{
+  margin-bottom: 0;
+  font-weight: 1000;
+  font-family: 'Cabin Sketch';
+  margin:auto auto 0 auto;
+  font-size: large;
+}

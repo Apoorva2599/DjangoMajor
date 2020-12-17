@@ -152,8 +152,8 @@
   }
   
   .flip-card-back {
-    background-color: rgb(91, 170, 235);
-    color: white;
+    background-color: rgba(91, 170, 235, 0.486);
+    color: black;
     transform: rotateY(180deg);
     font-size: 1.3em;
     border-radius: 20px;
@@ -161,4 +161,12 @@
     font-family: 'Englebert';
   }
 
- 
+ .imgtxt{
+   background-color: rgba(27, 113, 184, 0.548);
+   border-radius: 1px;
+   font-family: 'Cabin Sketch';
+   font-weight: bold;
+   font-size: 1.5em;
+   margin-top: 2%;
+   border-radius: 10px;
+ }
