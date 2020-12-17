@@ -7,6 +7,7 @@
         <title>
             Briefer
         </title>
+        <link rel="icon" href="{% static 'images/logo.png' %}" type="image/icon type">
         <link href='https://fonts.googleapis.com/css?family=Pangolin' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Englebert' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
@@ -28,8 +29,8 @@
       <body>
           <header id="homepage">
             <!--NAV BAR-->
-            <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-              <a class="navbar-brand" href="{% url 'home' %}">BRIEFER</a>
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+              <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" id="logo">BRIEFER</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -84,7 +85,7 @@
                       <div class="col-2" >
                         <div class="form-check-inline">
                           <label class="form-check-label" for="text_up">
-                          <input type="checkbox" class="form-check-input" id="text_up" name="text_up" value="text_up">Text
+                          <input type="checkbox" class="form-check-input" id="text_up" name="text_up" value="text_up" checked>Text
                           </label>
                         </div>
                       </div>
@@ -104,7 +105,7 @@
                         </div>
                       </div>
                     <div class="col-6" id="file-up" >
-                        <input type="file" id="file" name="file">
+                        <input type="file" id="file" name="file" disabled>
                       </div>
                   </div>
 
@@ -117,7 +118,7 @@
                           
                         <div class="col-4">
                           
-                          <select name="in_lang">
+                          <select name="in_lang" required>
                             <option value="" disabled selected>Input Language</option>
                             {% for l in language %}
                                 <option value="{{ l }}">{{ l }}</option>
@@ -125,7 +126,7 @@
                           </select>
                         </div>
                         <div class="col-4">
-                          <select name="out_lang">
+                          <select name="out_lang" required>
                             <option value="" disabled selected>Output Language</option>
                             {% for l in language %}
                                 <option value="{{ l }}">{{ l }}</option>
@@ -161,19 +162,10 @@
              $(this).siblings('input:checkbox').prop('checked', false);
          });
        </script>
-         <script>
-          document.getElementById('upld').onchange = function(){
-             if(this.checked) {document.getElementById('file-up').style.display='block';
-             //more js statements
-             }
-             else {document.getElementById('file-up').style.display='none';
-             //more js statements
-             }
-          }
-          </script> 
          
         <script src="https://kit.fontawesome.com/dba7b28fc9.js" crossorigin="anonymous"></script>
         <script src="{% static 'js/particles.js' %}"></script>
+        <script src="{% static 'js/checkbox.js' %}"></script>
     
     </body>
 </html>

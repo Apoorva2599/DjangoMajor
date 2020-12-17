@@ -7,6 +7,7 @@
         <title>
             Briefer
         </title>
+        <link rel="icon" href="{% static 'images/logo.png' %}" type="image/icon type">
         <link href='https://fonts.googleapis.com/css?family=Averia Sans Libre' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Englebert' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
@@ -26,7 +27,7 @@
         <header id="homepage">
             <!--NAV BAR-->
             <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-              <a class="navbar-brand" href="{% url 'home' %}">BRIEFER</a>
+              <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" id="logo">BRIEFER</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -69,7 +70,7 @@
                 <div class="container-fluid">
 
         <div class="row">
-                <div class="col-3" id="flipdes1">
+                <div class="col-lg-3 col-sm-6 col-12" id="flipdes1">
                   <div class="flip-card">
                       <div class="flip-card-inner">
                           <div class="flip-card-front">
@@ -86,7 +87,7 @@
                   </div>
                   
 
-                  <div class="col-3" id="flipdes2">
+                  <div class="col-lg-3 col-sm-6 col-12" id="flipdes2">
                   <div class="flip-card">
                       <div class="flip-card-inner">
                           <div class="flip-card-front">
@@ -102,7 +103,7 @@
                   </div>
                   </div>
                  
-                  <div class="col-3" id="flipdes3">
+                  <div class="col-lg-3 col-sm-6 col-12" id="flipdes3">
                   <div class="flip-card">
                       <div class="flip-card-inner">
                           <div class="flip-card-front">
@@ -118,7 +119,7 @@
                   </div>
                   </div>
 
-                  <div class="col-3" id="flipdes4">
+                  <div class="col-lg-3 col-sm-6 col-12" id="flipdes4">
                   <div class="flip-card">
                       <div class="flip-card-inner">
                           <div class="flip-card-front">

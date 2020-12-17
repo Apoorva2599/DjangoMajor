@@ -62,7 +62,7 @@ select{
     border-radius: 2px;
     font-size: medium;
     color: white;
-    font-weight: bold;
+    
     padding: 5px 2px;
 }
 select option{
@@ -171,7 +171,7 @@ textarea::placeholder{
     padding:2%;
     color: #27262c;
     font-family: cursive;
-    font-size: 1em;
+    font-size: 0.9em;
     width: 100%;
     margin: 0 auto 2% auto;
 }

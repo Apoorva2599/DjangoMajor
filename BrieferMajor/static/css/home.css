@@ -12,6 +12,10 @@ canvas{
   font-family: 'Cabin Sketch';
   font-size: 2em;
 }
+#logo{
+  width: 20%;
+  height: 20%;
+}
 .navbar-nav li{
     text-align: center;
     padding: .3rem 1.5rem;
@@ -281,6 +285,7 @@ h3{
 
 #second {
   background-color: white;
+  justify-content: center;
 }
 
 
@@ -289,6 +294,7 @@ h3{
   padding : 5%;
   border: 3px solid #27262c;
   margin-bottom: 10px;
+  margin-top: 10%;
 }
 
 .card-image{
@@ -323,3 +329,105 @@ span.card-title{
   margin:auto auto 0 auto;
   font-size: large;
 }
+@media only screen and  (max-width: 374px) {
+  #briefitout {
+    font-size: 2em;  
+    margin-top: 70px;
+    text-align: center;
+   
+  }
+  .navbar-brand{
+    font-size: 1.2em;
+  }
+  .navbar-toggler-icon{
+    width: 1em;
+  }
+  #imgrow img{
+    width: 29%;
+  }
+}
+/* @media only screen and  (max-width: 409px) {
+  #briefitout {
+    font-size: 2em;  
+    margin-top: 70px;
+    text-align: center;
+   
+  }
+  .navbar-brand{
+    font-size: 1.5em;
+  }
+  #imgrow img{
+    width: 29%;
+  }
+} */
+@media only screen and (min-width: 375px) and (max-width: 410px) {
+  #briefitout {
+    font-size: 2.3em;  
+    margin-top: 70px;
+    text-align: center;
+   
+  }
+  .navbar-brand{
+    font-size: 1.5em;
+  }
+  .navbar-toggler-icon{
+    width: 1.1em;
+  }
+  #imgrow img{
+    width: 29%;
+  }
+}
+@media only screen and (min-width: 411px) and (max-width: 570px) {
+  #briefitout {
+    font-size: 3.3em;  
+    margin-top: 50px;
+    text-align: center;
+  }
+  .card-image{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+  }
+  .card-content p{
+    height: 100px;
+  }
+}
+@media only screen and  (min-width: 571px) and (max-width: 767px) {
+  #briefitout {
+    font-size: 3.3em;  
+    margin-top: 30px;
+    text-align: center;
+  }
+  #imgrow img{
+    width: 30%;
+  }
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and  (min-width: 768px) and (max-width: 823px) {
+  #briefitout {
+    font-size: 3.1em;  
+    margin-top: 40px;
+  }
+  #imgrow img{
+    width: 30%;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (min-width: 824px) and (max-width: 992px) {
+  #briefitout {
+      font-size: 3.3em;  
+  }
+  #imgrow img{
+    width: 30%;
+  }
+  .card-image{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */

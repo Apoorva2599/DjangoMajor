@@ -7,6 +7,7 @@
         <title>
             Briefer
         </title>
+        <link rel="icon" href="{% static 'images/logo.png' %}" type="image/icon type">
         <link href='https://fonts.googleapis.com/css?family=Pangolin' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Englebert' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
@@ -24,8 +25,8 @@
       <body>
           <header id="homepage">
             <!--NAV BAR-->
-            <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-              <a class="navbar-brand" href="{% url 'home' %}">BRIEFER</a>
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+              <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" id="logo">BRIEFER</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -81,7 +82,7 @@
                       <div class="col-2" >
                         <div class="form-check-inline">
                           <label class="form-check-label" for="text_up">
-                          <input type="checkbox" class="form-check-input" id="text_up" name="text_up" value="text_up">Text
+                          <input type="checkbox" class="form-check-input" id="text_up" name="text_up" value="text_up" checked>Text
                           </label>
                         </div>
                       </div>
@@ -106,7 +107,7 @@
                         });
                       </script>
                     <div class="col-6" id="file-up" >
-                        <input type="file" id="file" name="file">
+                        <input type="file" id="file" name="file" disabled>
                       </div>
                   </div>
                   <div class="row" id="optimizeinputs">
@@ -116,7 +117,7 @@
                     
                       <form class="col-md-6 col-12">
                         {% csrf_token %}
-                        <textarea name="" id="opti" readonly placeholder="Your optimized code will appear here!">{{optimized}}</textarea>
+                        <textarea name="" id="opti" readonly placeholder="Your optimized text will appear here!">{{optimized}}</textarea>
                         <div id="synonyms table-responsive">
                           <table class="table table-hover table-info">
                             <thead>
@@ -155,18 +156,10 @@
              $(this).siblings('input:checkbox').prop('checked', false);
          });
        </script>
-        <script>
-          document.getElementById('upld').onchange = function(){
-             if(this.checked) {document.getElementById('file-up').style.display='block';
-             //more js statements
-             }
-             else {document.getElementById('file-up').style.display='none';
-             //more js statements
-             }
-          }
-          </script>
+        
         <script src="https://kit.fontawesome.com/dba7b28fc9.js" crossorigin="anonymous"></script>
         <script src="{% static 'js/particles.js' %}"></script>
+        <script src="{% static 'js/checkbox.js' %}"></script>
     
     </body>
 </html>

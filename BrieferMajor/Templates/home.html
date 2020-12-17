@@ -7,6 +7,7 @@
         <title>
             Briefer
         </title>
+        <link rel="icon" href="{% static 'images/logo.png' %}" type="image/icon type">
         <link href='https://fonts.googleapis.com/css?family=Barrio' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Englebert' rel='stylesheet'>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
@@ -31,8 +32,8 @@
     <body>
         <header  id="homepage">
             <!--NAV BAR-->
-            <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-                <a class="navbar-brand" href="{% url 'home' %}">BRIEFER</a>
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+                <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" id="logo">BRIEFER</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                   <span class="navbar-toggler-icon"></span>
                 </button>

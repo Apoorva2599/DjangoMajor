@@ -10,6 +10,11 @@
   /*NAV ITEMS*/
   .navbar-brand{
     font-family: 'Cabin Sketch';
+    font-size: 2em;
+  }
+  #logo{
+    width: 20%;
+    height: 20%;
   }
   .navbar-nav li{
       text-align: center;

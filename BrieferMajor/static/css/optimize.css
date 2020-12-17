@@ -51,6 +51,7 @@ table{
     color: white;
     font-weight: bold;
     overflow: hidden;
+    
 }
 @media only screen and  (min-width: 500px) {
     h1 {
