@@ -12,6 +12,7 @@
     font-family: 'Cabin Sketch';
     font-size: 2em;
   }
+  
   #logo{
     width: 20%;
     height: 20%;
@@ -120,85 +121,170 @@
     padding: 5px;
   }
 
-.flip-card {
-    background-color: transparent;
-    width: 280px;
-    height: 280px;
-    perspective: 1000px;
-    border-radius: 20px;
-  }
-  
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
+
+#cardtext{
+  width: 50%;
+    margin: 20px auto 20px auto;
+    font-size: larger;
+    color: white;
+    font-weight: bold;
     text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 20px;
-  }
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  
-  .flip-card-front {
-    background-color: #bbb;
-    color: black;
-    border-radius: 20px;
-  }
-  
-  .flip-card-back {
-    background-color: rgba(91, 170, 235, 0.486);
-    color: black;
-    transform: rotateY(180deg);
-    font-size: 1.3em;
-    border-radius: 20px;
-    padding: 5px;
-    font-family: 'Englebert';
-  }
+    
+    
+}
 
- .imgtxt{
-   background-color: rgba(27, 113, 184, 0.548);
-   border-radius: 1px;
-   font-family: 'Cabin Sketch';
-   font-weight: bold;
-   font-size: 1.5em;
-   margin-top: 2%;
-   border-radius: 10px;
- }
- .card-flip > div {
-  backface-visibility: hidden;
-  transition: transform 300ms;
-  transition-timing-function: linear;
+
+
+.cardBox {
+  float: left;
+  font-size: 1em;
+  margin: 1% 0 0 1%;
+  perspective: 800px;
+  transition: all 0.3s ease 0s;
+  width: 23.7%;
+}
+
+.cardBox:hover .card {
+  transform: rotateY( 180deg);
+}
+
+.card {
+  background: transparent;
+  cursor: default;
+  border: hidden;
+  height: 300px;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease 0s;
   width: 100%;
+  -webkit-animation: giro 1s 1;
+  animation: giro 1s 1;
+}
+
+.card p {
+  margin-bottom: 1.8em;
+}
+
+.card .front,
+.card .back {
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  color: white;
+  display: block;
+  font-size: 1.4em;
+  font-family:'Englebert';
   height: 100%;
-  margin: 0;
-  display: flex;
-}
-
-.card-front {
-  transform: rotateY(0deg);
-}
-
-.card-back {
-  transform: rotateY(180deg);
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 20px;
   position: absolute;
-  top: 0;
+  text-align: center;
+  width: 100%;
+}
+.card .front img{
+  width:inherit;
+  height: inherit;
+  border: 1px solid rgba(27, 113, 184, 0.671);
+  border-radius: 20px;
 }
 
-.card-flip:hover .card-front {
-  transform: rotateY(-180deg);
+.card .front strong {
+  background: #fff;
+  border-radius: 100%;
+  color: #222;
+  font-size: 1.5em;
+  line-height: 30px;
+  padding: 0 7px 4px 6px;
 }
-  
-.card-flip:hover .card-back {
-  transform: rotateY(0deg);
+
+.card .back {
+  transform: rotateY( 180deg);
 }
+
+.card .back a {
+  padding: 0.3em 0.5em;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 1px;
+  font-size: 0.9em;
+  transition: all 0.2s ease 0s;
+}
+
+.card .back a:hover {
+  background: #fff;
+  color: #333;
+  text-shadow: 0 0 1px #333;
+}
+
+.cardBox:nth-child(1) .card .back {
+  background: rgba(27, 113, 184, 0.616);
+}
+
+.cardBox:nth-child(2) .card .back {
+  background: rgba(27, 113, 184, 0.616);
+}
+
+.cardBox:nth-child(3) .card .back {
+  background: rgba(27, 113, 184, 0.616);
+}
+
+.cardBox:nth-child(4) .card .back {
+  background: rgba(27, 113, 184, 0.616);
+}
+
+.cardBox:nth-child(2) .card {
+  -webkit-animation: giro 1.5s 1;
+  animation: giro 1.5s 1;
+}
+
+.cardBox:nth-child(3) .card {
+  -webkit-animation: giro 2s 1;
+  animation: giro 2s 1;
+}
+
+.cardBox:nth-child(4) .card {
+  -webkit-animation: giro 2.5s 1;
+  animation: giro 2.5s 1;
+}
+
+@-webkit-keyframes giro {
+  from {
+    transform: rotateY( 180deg);
+  }
+  to {
+    transform: rotateY( 0deg);
+  }
+}
+
+@keyframes giro {
+  from {
+    transform: rotateY( 180deg);
+  }
+  to {
+    transform: rotateY( 0deg);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cardBox {
+    margin-left: 2.8%;
+    margin-top: 3%;
+    width: 46%;
+  }
+  .card {
+    height: 285px;
+  }
+  .cardBox:last-child {
+    margin-bottom: 3%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cardBox {
+    width: 94.5%;
+  }
+  .card {
+    height: 260px;
+  }
+}
+
