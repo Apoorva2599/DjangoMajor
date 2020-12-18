@@ -69,7 +69,7 @@
               <h2 class = "typewriter">ABOUT</h2></div></center>
                 <div class="container-fluid">
 
-        <div class="row">
+        <!-- <div class="row">
                 <div class="col-lg-3 col-sm-6 col-12" id="flipdes1">
                   <div class="flip-card">
                       <div class="flip-card-inner">
@@ -134,10 +134,89 @@
                         </div>
                   </div>
                   </div>
+                </div> -->
+                <div class="row">
+                  <div class="col-lg-3 col-sm-6 col-12">
+                      <div class="card card-flip h-100">
+                          <div class="card-front text-white bg-dark">
+                              <div class="card-body">
+                                  
+                                  <h3 class="card-title">SUMMARIZER</h3>
+                                  <p class="card-text"></p>
+                              </div>
+                          </div>
+                          <div class="card-back bg-white">
+                              <div class="card-body">
+                                  <h3 class="card-title"></h3>
+                                  <p class="card-text">Briefer provides a summary of input to the user in the form or either text or via speech. It can take input as text, speech or document. Text summarization will be achieved.</p>
+                                  <a href="{% url 'Summary' %}" class="btn btn-outline-secondary">Try It.</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 col-12">
+                      <div class="card card-flip h-100">
+                          <div class="card-front text-white bg-warning">
+                              <div class="card-body">
+                                 
+                                  <h3 class="card-title">ANALYZER</h3>
+                                  <p class="card-text"></p>
+                              </div>
+                          </div>
+                          <div class="card-back bg-dark text-white">
+                              <div class="card-body">
+                                  <h3 class="card-title"></h3>
+                                  <p class="card-text">Briefer provides sentiment analysis which determines the inclination of the text either positive, negative or neutral.</p>
+                                  <a href="{% url 'Sentiment' %}" class="btn btn-outline-secondary">Try It.</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="card card-flip h-100">
+                        <div class="card-front text-white bg-warning">
+                            <div class="card-body">
+                              
+                                <h3 class="card-title">TRANSLATOR</h3>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                        <div class="card-back bg-dark text-white">
+                            <div class="card-body">
+                                <h3 class="card-title"></h3>
+                                <p class="card-text">As Briefer will cater to a large audience from around the globe hence it also allows users to translate the summary into their desired language.</p>
+                                <a href="{% url 'LangTranslate' %}" class="btn btn-outline-secondary">Try It.</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                  <div class="card card-flip h-100">
+                      <div class="card-front text-white bg-warning">
+                          <div class="card-body">
+                              
+                              <h3 class="card-title">OPTIMIZER</h3>
+                              <p class="card-text"></p>
+                          </div>
+                      </div>
+                      <div class="card-back bg-dark text-white">
+                          <div class="card-body">
+                              <h3 class="card-title"></h3>
+                              <p class="card-text">Briefer renders scope for optimization of text such as most frequent words, spelling corrections, grammar corrections, etc.</p>
+                              <a href="{% url 'Optimize' %}" class="btn btn-outline-secondary">Try It.</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+                  
+                  
+                  </div>
               </div>
               </div>
-              </div>
+              
+            </div>
+             
+            
               <footer class="site-footer">
  
                 <div class="container">

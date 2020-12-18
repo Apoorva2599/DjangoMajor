@@ -72,6 +72,7 @@
                   <div class="row" id="Otextareas">
                       <form  action="{% url 'Optimize' %}" method="post" class="col-md-6 col-12"  enctype="multipart/form-data">
                         {% csrf_token %}
+                       
                         <textarea name="text" id="text" placeholder="Paste your text or URL here..." >{% if text %}{{ text }}{% endif %}{% if output %}{{output}}{% endif %}</textarea>
                         
                           
@@ -118,7 +119,7 @@
                       <form class="col-md-6 col-12">
                         {% csrf_token %}
                         <textarea name="" id="opti" readonly placeholder="Your optimized text will appear here!">{{optimized}}</textarea>
-                        <div id="synonyms table-responsive">
+                        <div id="synonyms table-responsive" style="height: 200px; overflow: scroll;">
                           <table class="table table-hover table-info">
                             <thead>
                             <tr>

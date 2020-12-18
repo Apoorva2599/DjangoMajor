@@ -119,7 +119,12 @@
                         <div class="col-4">
                           
                           <select name="in_lang" required>
+                            {% if in_lang %}
+                            <option value="{{ in_lang }}" selected>{{in_lang}}</option>
+                            {% else %}
                             <option value="" disabled selected>Input Language</option>
+                            {% endif %}
+
                             {% for l in language %}
                                 <option value="{{ l }}">{{ l }}</option>
                             {% endfor %}
@@ -127,7 +132,11 @@
                         </div>
                         <div class="col-4">
                           <select name="out_lang" required>
+                            {% if out_lang %}
+                            <option value="{{ out_lang }}" selected>{{out_lang}}</option>
+                            {% else %}
                             <option value="" disabled selected>Output Language</option>
+                            {% endif %}
                             {% for l in language %}
                                 <option value="{{ l }}">{{ l }}</option>
                             {% endfor %}

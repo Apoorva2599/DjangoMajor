@@ -153,7 +153,7 @@ def Summary(request):
         if ajx:
             return JsonResponse({'output':summary},status=200)
         else:
-            return render(request,'Summary.html',{'output':summary,'text':text})
+            return render(request,'Summary.html',{'output':summary,'text':text, 'n':top_n})
     else:
         if ajx:
             return JsonResponse({'output':None},status=200)
@@ -244,7 +244,7 @@ def LangTranslate(request):
         if ajx:
             return JsonResponse({'translation': translation, 'language': language, 'text':text},status=200)
         else:    
-            return render(request, 'LangTranslate.html', {'translation': translation, 'language': language, 'text':text})
+            return render(request, 'LangTranslate.html', {'translation': translation, 'language': language, 'text':text, 'in_lang':inputLanguage, 'out_lang': outputLanguage})
     else:
         if ajx:
             return JsonResponse(None,status=200)
