@@ -18,7 +18,6 @@
         <link rel="stylesheet" href="{% static 'css/summary_translate.css' %}">
         <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         
@@ -110,44 +109,6 @@
                         <input type="file" id="file" name="file" disabled>
                       </div>
                   </div>
-                          <!-- User input options -->
-                         <!-- <table>
-                          <tbody>
-                          <tr>
-                          <td>
-                          <span>
-                          
-                          <input type="radio" id="text_up" name="text_up" value="text_up">
-                          <label for="text_up" >Paste Your Text</label>
-                          </span>
-                          </td>
-                          <td>
-                          <span>
-                          
-                           <input type="radio" id="url_up" name="url_up" value="url_up"><label for="url_up">URL</label><br>
-                         
-                          </span>
-                          </td>
-                          </tr>
-                          </tbody>
-                          </table>
-                          <table>
-                          <tr>
-                          <td>
-                          <span>
-                          <input type="radio" id="upld" name="upld" value="upld">
-                          <label for="upld">UPLOAD</label>
-                          </span>
-                          </td>
-                          <td>
-                          <input type="file" id="file" name="file">
-                          
-                          </td>
-                          
-                          </tr>
-                          
-                          </table>
-                        -->
                           <div class="col-6" id="efc">
                           
                           <input type="number" placeholder="Enter frequency count" name="n" min="1" id= "fr" value={% if n %}{{n}}{% endif %} required>

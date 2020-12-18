@@ -115,7 +115,7 @@
                       
                       <form class="col-md-6 col-12">
                         {% csrf_token %}
-                        <!-- <textarea name="" id="">{% if flag %}{{flag}}{% endif %}</textarea> -->
+                      
                         <div class="progress">
                         <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow={{pos}} aria-valuemin="0" aria-valuemax="100" style="width:{{pos}}%">
                             Positive : {{pos}}%
@@ -147,12 +147,6 @@
         </div>
         <!--END SECTIONS-->
         <script>
-            $(document).ready(function (){
-                $('li').click(function() {
-                    $('li.active').removeClass("active");
-                    $(this).addClass("active");
-                });
-            });
             
              $('.navbar-collapse a').click(function(){
                 $(".navbar-collapse").collapse('hide');

@@ -129,48 +129,7 @@ function process(rawText) {
 		response = voiceResponse(flag);
 		asstResponse = response;
 	}
-	// if(flag=='done'){
-	// 	text="done";
-	// 	console.log(text+"Hello");
-	// }
-	// console.log(flag+"Hey")
-	// let text = rawText.replace(/\s/g, "");
-	// text = text.toLowerCase();
-	// var summary = text.match(/summar/i)
-	// if(summary != undefined){
-	// 	text="summary";
-	// }
-	// let response = null;
-	// console.log(6);
-	// switch(text) {
-	// 	case "hello":
-	// 		response = "hi, welcome to Briefer. We summarize,analyze or translate your text. How should I help you"; break;
-	// 	case "whatoptionsdoyouhave":
-	// 		response = "Do you want to summarize,analyze or translate your text?";  break;
-	// 	case "howareyou":
-	// 		response = "I'm good."; break;
-	// 	case "summary":
-	// 		response = "Ok. You can input your text through speech now.";
-	// 		flag = 's';
-	// 		break;
-	// 	case 'done':
-	// 		response = 'done';
-	// 		break;
-	// 	case "whattimeisit":
-	// 		response = new Date().toLocaleTimeString(); break;
-	// 	case "stop":
-	// 		response = "Bye!!";
-	// 		toggleBtn();
-	// 	case "bye":
-	// 		response = "Bye!!";
-	// 		toggleBtn();
-	// }
-	// if (!response) {
-	// 	window.open(`http://google.com/search?q=${rawText.replace("search", "")}`, "_blank");
-	// 	return `I found some information for ${rawText}`;
-	// }
-	// console.log(flag);
-	// return response;
+	
 }
 
 function voiceResponse(flg){
