@@ -21,6 +21,7 @@
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         
+        
     </head>
     <body>
         <header id="homepage">
@@ -53,8 +54,25 @@
             <!--END NAV-->
         </header>
         <!--VOICE ASSISTANT-->
-        
-        <!--END VOICE-->
+        <div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title">Hey There! Welcome to Briefer!</h5>
+                      <button type="button" class="close" data-dismiss="modal" id="closebtn">&times;</button>
+                  </div>
+                  <div class="modal-body" id="modalbody">
+                      <div id="result">
+                        <form method="POST">{% csrf_token %}
+                          {% if output %}<p>{{output}}</p>{% endif %}
+                        </form>
+                        
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!--END VOICE-->
 
         <!--MAIN AREA-->
         <div class="container-fluid">
@@ -127,10 +145,12 @@
 
                                      
                   </div>
+                  <button id="briefy" onclick="voiceasst()"><img src="https://www.flaticon.com/svg/static/icons/svg/925/925025.svg" height="40px" width="40px"></button>
                 </div>
+                
               </div>
             
-            
+              
         </div>
         <!--END MAIN AREA-->
         <script>
@@ -148,6 +168,6 @@
         <script src="https://kit.fontawesome.com/dba7b28fc9.js" crossorigin="anonymous"></script>
         <script src="{% static 'js/particles.js' %}"></script>
         <script src="{% static 'js/checkbox.js' %}"></script>
-    
+        <script src="{% static 'js/voice.js' %}"></script>
     </body>
 </html>

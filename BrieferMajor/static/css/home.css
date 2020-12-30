@@ -432,3 +432,19 @@ span.card-title{
 
 /* Large devices (large desktops, 1200px and up) */
 
+#briefy{
+  box-shadow: 3px 3px #888888;
+  border: 2px solid rgb(87, 86, 86);
+  border-radius: 50px;
+  position: absolute;
+  right: 0;
+  margin-top: -2.8%;
+  margin-right: 2.3%;
+  outline: none;
+}
+
+#briefy:hover{
+  box-shadow: 3px 3px #555454;
+  
+}
+
