@@ -3,7 +3,7 @@ from django.http import HttpResponse, JsonResponse
 from django.http import HttpResponseRedirect
 import nltk
 from nltk.stem import WordNetLemmatizer
-import language_check #grammar check
+
 from textblob import TextBlob
 from collections import Counter
 from nltk.corpus import stopwords
@@ -11,7 +11,7 @@ from nltk.corpus import wordnet
 nltk.download('vader_lexicon')
 nltk.download('punkt')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-import language_tool_python
+import language_tool_python #grammar check
 import pandas as pd
 from numpy import pi
 from googletrans import Translator, LANGUAGES
